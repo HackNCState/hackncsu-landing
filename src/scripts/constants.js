@@ -16,7 +16,69 @@ const registrationOpened = false;
 // ---------------------------------------
 
 // show/hide sponsors section
-const haveSponsors = false;
+const sponsors = [
+    {
+        name: "Cisco",
+        image: "assets/img/sponsors/cisco.png",
+        link: "https://www.cisco.com/",
+    },
+    {
+        name: "CSL",
+        image: "assets/img/sponsors/csl.png",
+        link: "https://www.csl.com/",
+    },
+    {
+        name: "Incogni",
+        image: "assets/img/sponsors/incogni.png",
+        link: "https://incogni.com/",
+    },
+    {
+        name: "iRODS",
+        image: "assets/img/sponsors/irods.png",
+        link: "https://irods.org/",
+    },
+    {
+        name: "LexisNexis",
+        image: "assets/img/sponsors/lexisnexis.png",
+        link: "https://www.lexisnexis.com/",
+    },
+    {
+        name: "Lowe's",
+        image: "assets/img/sponsors/lowes.png",
+        link: "https://www.lowes.com/",
+    },
+    {
+        name: "NordPass",
+        image: "assets/img/sponsors/nordpass.png",
+        link: "https://nordpass.com/",
+    },
+    {
+        name: "NordVPN",
+        image: "assets/img/sponsors/nordvpn.png",
+        link: "https://nordvpn.com/",
+    },
+    {
+        name: "Saily",
+        image: "assets/img/sponsors/saily.png",
+        link: "https://saily.com/",
+    },
+    {
+        name: "StandOut Stickers",
+        image: "assets/img/sponsors/standoutstickers.png",
+        link: "https://www.standoutstickers.com/",
+    },
+    {
+        name: "Volvo",
+        image: "assets/img/sponsors/volvo.jpg",
+        link: "https://www.volvogroup.com/",
+    },
+    {
+        name: "Direct Supply",
+        image: "assets/img/sponsors/directsupply.png",
+        link: "https://www.directsupply.com/",
+    }
+
+];
 // TODO: in the future this can be an array of sponsor objects. if empty, the sponsors section would not be shown
 
 const directors = [

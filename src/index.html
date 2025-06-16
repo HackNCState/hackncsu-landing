@@ -2,6 +2,7 @@
 <html class="scroll-smooth">
 
 <head>
+    <!-- add seo tags description etc. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
@@ -245,26 +246,15 @@
             in
             sponsoring Hack_NCState, please reach out to us at <a href="mailto:hackncstate@ncsu.edu"
                 class="font-bold underline">hackncstate@ncsu.edu</a>.</p>
-        <div class="outline-dotted p-8 rounded-xl text-center">sponsors go here</div>
-        <div class="outline-dotted p-8 rounded-xl text-center">sponsors go here</div>
-        <div class="outline-dotted p-8 rounded-xl text-center">sponsors go here</div>
+
+        <div id="sponsors-list"
+            class="my-8 grid grid-cols-2 lg:grid-cols-3 md:gap-x-32 gap-y-4 place-items-center">
+            <!-- Sponsors generated here -->
+        </div>
+
     </div>
 
-    <script>
-        // code for hiding sponsors container if no sponsors are present
-        // temporary solution until we have real sponsors
-
-        if (!haveSponsors) {
-            const sponsorsContainer = document.getElementById("sponsors-container");
-            sponsorsContainer.classList.add("hidden");
-
-            const emptyDiv = document.createElement("div");
-            emptyDiv.className = "md:h-32";
-
-            sponsorsContainer.insertAdjacentElement("beforebegin", emptyDiv);
-
-        }
-    </script>
+    <script src=" scripts/sponsor-builder.js"></script>
 
     <div id="organizers-container" class="info-container flex flex-col gap-4 md:gap-8 md:-mt-32 md:text-lg">
         <h2 class="text-2xl text-red-700 font-mono font-bold md:text-4xl">Meet the Team</h2>
@@ -272,15 +262,15 @@
 
         <div>
             <h3 class="text-xl text-red-600 font-mono font-semibold mb-4 md:text-3xl">Directors</h3>
-            <div id="directors-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
-
+            <div id="directors-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Directors generated here -->
             </div>
         </div>
 
         <div>
             <h3 class="text-xl text-red-600 font-mono font-semibold mb-4 md:text-3xl">Organizers</h3>
             <div id="organizers-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
+                <!-- Organizers generated here -->
             </div>
         </div>
 
@@ -296,8 +286,6 @@
     </div>
 
     <script src="scripts/card-builder.js"></script>
-    </div>
-
 
 
     <div id="footer" class="relative">
@@ -306,7 +294,8 @@
         <div class="relative z-1 inset-0 info-container flex flex-col gap-4 text-white !p-6 !md-0">
             <h2 class="text-2xl font-mono font-bold">Hack_NCState</h2>
             <div class="flex flex-col">
-                <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" class="font-bold underline">MLH Code of
+                <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" class="font-bold underline">MLH
+                    Code of
                     Conduct</a>
                 <a href="mailto:hackncstate@ncsu.edu" class="font-bold underline">Contact Us</a>
                 <a href="https://www.instagram.com/hack_ncstate/" class="font-bold underline">Instagram</a>
