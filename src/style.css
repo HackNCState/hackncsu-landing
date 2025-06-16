@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols:FILL,ROND@0..1,100&icon_names=arrow_cool_down,arrow_forward,calendar_month,link,location_on,person&display=block');
+/** TODO: only include needed icons and other optimizations
+https://developers.google.com/fonts/docs/material_symbols#optimize_the_icon_font
+*/
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Lexend', sans-serif;
+    --font-mono: 'Jetbrains Mono', monospace;
+    --font-icon: 'Material Symbols', sans-serif;
+}
+
+@font-face {
+    font-family: Jetbrains Mono;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("assets/fonts/JetbrainsMono[wght].ttf") format("truetype"),
+}
+
+.info-container {
+    @apply p-6 md:mx-32 md:py-32;
+}
+
+.countdown-item {
+    @apply grow bg-white text-black flex flex-col justify-center items-center p-2 rounded-xl;
+}
+
+a {
+    @apply hover:opacity-60;
+    @apply transition-all duration-200 ease-in-out;
+}
+
+.base-icon-button {
+    @apply flex flex-row justify-between items-center px-4 py-2 rounded-xl gap-4;
+}
+
+.countdown-button {
+    @apply bg-white text-black shadow-md/30;
+    @apply hover:opacity-100 hover:bg-gray-300 hover:shadow-xl/30;
+}
+
+.outline-button {
+    @apply outline-solid outline-2 outline-white;
+}
+
+.dark-outline-button {
+    @apply outline-solid outline-2 outline-black;
+}
+
+.list-title {
+    @apply text-2xl text-red-700 flex flex-row items-center gap-4 md:text-4xl;
+}
+
+.list-entry {
+    @apply flex flex-col gap-2 md:text-xl md:gap-4;
+}
+
+.organizer {
+    @apply flex flex-row items-center gap-4 p-4 border border-gray-300 rounded-2xl hover:shadow-lg;
+
+    .organizer-photo {
+        @apply w-16 h-16 rounded-full object-cover md:w-20 md:h-20;
+    }
+}
+
+.img-bg-gradient {
+    @apply bg-gradient-to-t from-black via-black/50 to-black md:bg-gradient-to-r;
+}
+
+.info-container-header {
+    @apply text-2xl font-mono font-bold md:text-4xl;
+}
