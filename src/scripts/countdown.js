@@ -1,13 +1,13 @@
 // countdown script
 
 function declareUnknownRegistration() {
-    document.getElementById("registration-flavor").innerText = "Registration isn't available yet.\nIf you want to be notified when it opens, please join our newsletter!";
+    document.getElementById("registration-flavor").innerText = "Registration isn't available yet.\nIf you're interested in participating, please fill out the interest form below to let us know!";
 
     document.getElementById("countdown-flavor").innerText = "";
 
     const button = document.getElementById("hero-button");
-    button.children[0].innerText = "Join Newsletter";
-    button.href = "http://eepurl.com/iCj-vE";
+    button.children[0].innerText = "Interest Form";
+    button.href = "https://docs.google.com/forms/d/e/1FAIpQLSez6g9QzUq1tzpaSi9LrTFv8y-Nh5fdbNsjmIJ4-5-RFDTUPg/viewform?usp=dialog";
 
 
 }
