@@ -103,14 +103,14 @@ const directors = [
     {
         name: "Ethan Perez",
         title: "Co-director of Logistics",
-        linkedin: "https://www.linkedin.com/in/ethan-d-perez/",
+        linkedin: "https://www.linkedin.com/in/ethan-d-perez?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         image: "assets/img/organizers/ethan.jpg"
     },
     {
         name: "Nick Farley",
         title: "Director of Media & Finance",
         linkedin: "https://www.linkedin.com/in/nicholas-farley-66b5762a9/",
-        image: "assets/img/organizers/nick.jpg"
+        image: "assets/img/organizers/nicholas.jpeg"
     }
 ];
 
@@ -122,21 +122,45 @@ const organizers = [
         image: "assets/img/organizers/aarya.jpg"
     },
     {
-        name: "Aivan Byrnes",
-        title: "Sponsorship Organizer",
-        linkedin: "http://linkedin.com/in/aivan-byrnes-818311250",
-        image: "assets/img/organizers/aivan.jpg"
+        name: "Ayush Gala",
+        title: "Software & Sponsorship Organizer",
+        linkedin: "https://www.linkedin.com/in/ayush-gala/",
+        image: "assets/img/organizers/ayush.jpg"
     },
     {
-        name: "Amanda Currie",
+        name: "Cooper Sizemore",
         title: "Software Organizer",
-        linkedin: "https://www.linkedin.com/in/amandarcurrie/",
-        image: "assets/img/organizers/amanda.jpg"
+        linkedin: "https://www.linkedin.com/in/cooper-sizemore/",
+        image: "assets/img/organizers/cooper.jpeg"
     },
     {
-        name: "Nathan Kim",
+        name: "Emery Tchervenski",
         title: "Software Organizer",
-        linkedin: "https://www.linkedin.com/in/nathan-kim-b45081284/",
-        image: "assets/img/organizers/nathan.jpg"
+        linkedin: "https://www.linkedin.com/in/emery-tchervenski-504474320/",
+        image: "assets/img/organizers/emery.jpg"
+    },
+    {
+        name: "Eric Pham",
+        title: "Finance & Sponsorship Organizer",
+        linkedin: "https://www.linkedin.com/in/eric-fam/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        image: "assets/img/organizers/ericpham.jpeg" 
+    },
+    {
+        name: "Ethan Tarlton",
+        title: "Software Organizer",
+        linkedin: "https://www.linkedin.com/in/ethan-tarlton-5a3944384/",
+        image: "assets/img/organizers/Ethan_T_Headshot.png"
+    },
+    {
+        name: "Sakashi Singh",
+        title: "Logistics, Sponsorship, & Software Organizer",
+        linkedin: "https://www.linkedin.com/in/sakshi-singh9/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        image: "assets/img/organizers/sakashi.jpg"
+    },
+    {
+        name: "Reece Dobro",
+        title: "Logistics Organizer",
+        linkedin: "https://reecedobro.onrender.com/",
+        image: "assets/img/organizers/reece.jpg"
     }
 ];
