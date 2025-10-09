@@ -28,6 +28,26 @@
         target="_blank">
         <img src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-black.svg"
             alt="Major League Hacking 2026 Hackathon Season" style="width:100%"></a>
+    
+    <script src="scripts/music-player.js"></script>
+
+    <a id="noir-music-player" href="#"
+        onclick="playMusic()"
+        style="position:fixed; top:10px; left:10px; z-index:10000; padding:5px; background-color:#000000; color:#ffffff; text-decoration:none; border-radius:5px; font-weight:bold; display:flex; align-items:center; justify-content:center; width:50px; height:50px;">
+        <img id="cd-image" src="assets/img/cd.jpg" alt="Play Music" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+        <audio id="music" src="assets/audio/jazz-noir-detective-music.mp3"></audio>
+    </a>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spinning {
+            animation: spin 4s linear infinite;
+        }
+    </style>
 
     <div id="hero" class="relative h-dvh overflow-hidden">
         <!-- gradient -->
