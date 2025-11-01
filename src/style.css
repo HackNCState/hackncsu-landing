@@ -58,7 +58,7 @@ a {
 }
 
 .outline-button {
-    @apply outline-solid outline-2 outline-gray-400;
+    @apply outline-solid outline-2 outline-gray-100;
 }
 
 .dark-outline-button {
