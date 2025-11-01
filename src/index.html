@@ -15,7 +15,7 @@
     <script src="scripts/constants.js"></script>
 </head>
 
-<body>
+<body class="bg-zinc-950 text-gray-200">
     <a id="mlh-trust-badge" style="display:block;
           max-width:100px;
           min-width:60px;
@@ -138,10 +138,10 @@
 
 
     <div id="description"
-        class="relative bg-[url(assets/img/hack1.jpg)] bg-bottom-right bg-no-repeat bg-cover text-white md:bg-center md:mx-32 md:rounded-4xl md:overflow-hidden md:shadow-2xl md:shadow-black">
+        class="relative bg-[url(assets/img/hack1.jpg)] bg-bottom-right bg-no-repeat bg-cover text-white ">
 
         <!-- gradient layer -->
-        <div class="absolute inset-0 z-0 img-bg-gradient"></div>
+        <div class="absolute inset-0 z-0 bg-black opacity-70"></div>
 
         <!-- content layer -->
         <div class="relative z-10 flex flex-col gap-4 info-container md:text-lg md:gap-8">
@@ -160,7 +160,7 @@
         </div>
     </div>
 
-    <div id="faq" class="info-container flex flex-col gap-4 md:gap-8">
+    <div id="faq" class="info-container flex flex-col gap-4 md:gap-10">
         <div class="list-entry">
             <div class="list-title">
                 <span class="font-icon">calendar_month</span>
@@ -245,10 +245,10 @@
 
     </div>
 
-    <div id="contact"
-        class="relative bg-[url(assets/img/hack2.jpg)] bg-center bg-no-repeat bg-cover text-white md:mx-32 md:rounded-4xl md:overflow-hidden md:shadow-2xl md:shadow-black">
+    <div id="contact" class="relative bg-[url(assets/img/hack2.jpg)] bg-center bg-no-repeat bg-cover text-white">
         <!-- gradient layer -->
-        <div class="absolute inset-0 z-0 img-bg-gradient"></div>
+        <!--<div class="absolute inset-0 z-0 img-bg-gradient"></div>-->
+        <div class="absolute inset-0 z-0 bg-black opacity-60"></div>
 
         <!-- content layer -->
         <div class="relative z-10 flex flex-col gap-4 info-container md:text-lg">
@@ -267,7 +267,7 @@
     </div>
 
     <div id="sponsors-container" class="info-container flex flex-col gap-4 md:text-lg">
-        <h2 class="text-2xl text-red-700 font-mono font-bold md:text-4xl">Key Allies</h2>
+        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Key Allies</h2>
 
                 <p>Every operation needs its backers. We're grateful to our allies for providing the resources to make this
             investigation possible. If you're interested in joining our network, send a secure message to <a href="mailto:hackncstate@ncsu.edu"
@@ -276,26 +276,26 @@
         <div id="sponsors-list"
             class="my-8 flex flex-row flex-wrap justify-center items-center gap-y-12 gap-x-4 md:gap-x-16">
             <a class="mx-4 md:mx-6 w-50 lg:w-75" href="https://www.lexisnexis.com/"><img
-                    src="assets/img/sponsors/lexisnexis.png" alt="LexisNexis"></a>
+                    src="assets/img/sponsors/lexisnexis-white.png" alt="LexisNexis"></a>
             <a class="mx-4 md:mx-6 w-50 lg:w-75" href="https://www.netapp.com/"><img
-                    src="assets/img/sponsors/netapp.avif" alt="NetApp"></a>
+                    src="assets/img/sponsors/netapp-white.png" alt="NetApp"></a>
             <a class="mx-4 md:mx-6 w-50 lg:w-75" href="https://www.fidelity.com/"><img
-                    src="assets/img/sponsors/fidelity.webp" alt="Fidelity"></a>
-            <a class="mx-4 md:mx-6 w-40 lg:w-65" href="https://www.lowes.com/"><img src="assets/img/sponsors/lowes.png"
-                    alt="Lowe's"></a>
+                    src="assets/img/sponsors/fidelity-white.png" alt="Fidelity"></a>
+            <a class="mx-4 md:mx-6 w-40 lg:w-65" href="https://www.lowes.com/"><img
+                    src="assets/img/sponsors/lowes-white.png" alt="Lowe's"></a>
             <!-- Lowe's logo is slightly smaller to look better to the eye -->
-            <a class="mx-4 md:mx-6 w-40 lg:w-65" href="https://www.cisco.com/"><img src="assets/img/sponsors/cisco.png"
-                    alt="Cisco"></a>
+            <a class="mx-4 md:mx-6 w-40 lg:w-65" href="https://www.cisco.com/"><img
+                    src="assets/img/sponsors/cisco-white.png" alt="Cisco"></a>
         </div>
 
     </div>
 
     <div id="organizers-container" class="info-container flex flex-col gap-4 -mt-8 md:gap-8 md:-mt-48 md:text-lg">
-        <h2 class="text-2xl text-red-700 font-mono font-bold md:text-4xl">Meet the Masterminds</h2>
+        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Meet the Masterminds</h2>
 
 
         <div>
-            <h3 class="text-xl text-red-600 font-mono font-semibold mb-4 md:text-3xl">Lead Detectives</h3>
+            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Lead Detectives</h3>
             <div id="directors-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.linkedin.com/in/pranavrajagopal/" target="_blank" class="organizer">
                     <img src="assets/img/organizers/pranav.jpg" alt="Pranav Rajagopal" class="organizer-photo">
@@ -341,7 +341,7 @@
         </div>
 
         <div>
-            <h3 class="text-xl text-red-600 font-mono font-semibold mb-4 md:text-3xl">Agents</h3>
+            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Agents</h3>
             <div id="organizers-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.linkedin.com/in/aaryarajoju/" target="_blank" class="organizer">
                     <img src="assets/img/organizers/aarya.jpg" alt="Aarya Rajoju" class="organizer-photo">
@@ -423,7 +423,7 @@
         <div class="flex flex-col gap-2">
             <p>Got the knack for cracking cases? <span class="font-bold">Join the Agency.</span></p>
             <a href="https://getinvolved.ncsu.edu/organization/hackncstate"
-                class="base-icon-button dark-outline-button self-start md:w-fit">
+                class="base-icon-button outline-button self-start md:w-fit">
                 <span class="text-xl font-bold mr-5">Go Undercover</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
