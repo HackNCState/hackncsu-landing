@@ -29,9 +29,35 @@
         <img src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-black.svg"
             alt="Major League Hacking 2026 Hackathon Season" style="width:100%"></a>
 
+
+    <script src="scripts/music-player.js"></script>
+
+    <a id="noir-music-player" href="#" onclick="playMusic()"
+        style="position:absolute; top:10px; left:10px; z-index:10000; background-color:#000000; color:#ffffff; border-radius:5px; font-weight:bold; display:flex; align-items:center; justify-content:center; width:55px; height:55px;">
+        <div style="position:relative; width:50px; height:50px; flex-shrink:0;">
+            <img id="cd-image" src="assets/img/cd.jpg" alt="Play Music"
+                style="width:100%; height:100; border-radius:50%;">
+            <div id="light"
+                style="position:absolute; bottom:4px; right:4px; width:10px; height:10px; background-color:red; border-radius:50%; box-shadow:0 0 4px red;">
+            </div>
+        </div>
+        <audio id="music" src="assets/audio/jazz-noir-detective-music.mp3" loop></audio>
+    </a>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spinning {
+            animation: spin 4s linear infinite;
+        }
+    </style>
+
     <div id="hero" class="relative h-dvh overflow-hidden">
         <!-- gradient -->
-        <div id="hero-gradient" class="absolute inset-0 z-0 bg-linear-to-tr from-red-600 to-red-900"></div>
+        <div id="hero-gradient" class="absolute inset-0 z-0 bg-linear-to-tr from-gray-800 to-black"></div>
 
         <script src="scripts/hero-gradient-animation.js"></script>
 
@@ -119,16 +145,16 @@
 
         <!-- content layer -->
         <div class="relative z-10 flex flex-col gap-4 info-container md:text-lg md:gap-8">
-            <h2 class="info-container-header">An opportunity to connect, compete, and collaborate.
+            <h2 class="info-container-header">A 24-hour race to crack the case.
             </h2>
-            <p>Hackathons are 24-hour competitions where students collaborate to solve problems using technology.
-                Whether you're technical or not, you’ll form teams, build innovative projects from scratch—like
-                websites, apps, or hardware—and bring ideas to life. Grab some friends and start creating!</p>
-            <p>Hack_NCState is <span class="font-bold">100% free</span> for everyone to attend! Enjoy complimentary
-                catering, a free t-shirt, stickers, and fun activities during the event.</p>
-            <a href="https://hackncstate2025.devpost.com/project-gallery"
+            <p>This ain't no ordinary gig. It's a 24-hour investigation where operatives collaborate to solve problems using technology.
+                Whether you're a seasoned PI or a rookie gumshoe, you’ll form squads, build your case from scratch - like
+                websites, apps, or hardware, and bring your solution to light. Grab your crew and start digging for clues!</p>
+<p>The Agency covers the tab. Hack_NCState is <span class="font-bold">100% free</span> for all operatives to attend! Enjoy complimentary
+                rations, a standard-issue t-shirt, stickers, and other activities while you're on the case.</p>
+                            <a href="https://hackncstate2025.devpost.com/project-gallery"
                 class="base-icon-button outline-button mt-16 md:w-fit">
-                <span class="text-xl font-bold md:mr-4">View Past Projects</span>
+<span class="text-xl font-bold md:mr-4">Review Past Case Files</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
         </div>
@@ -138,82 +164,79 @@
         <div class="list-entry">
             <div class="list-title">
                 <span class="font-icon">calendar_month</span>
-                <h2 class="font-mono font-bold">When's the event?</h2>
+<h2 class="font-mono font-bold">When's the operation?</h2>
             </div>
-
-            <p>Hack_NCState 2026 will be held through the weekend February 14th and 15th. You begin coding at 11 AM on
-                Saturday and have until 11 AM on Sunday to submit your project.</p>
+                <p>The operation runs through the weekend of February 14th and 15th. You start cracking the case at 11 AM on
+                Saturday and have until 11 AM on Sunday to submit your findings.</p>
         </div>
 
         <div class="list-entry">
             <div class="list-title">
                 <span class="font-icon">location_on</span>
-                <h2 class="font-mono font-bold">Where's the event?</h2>
+<h2 class="font-mono font-bold">Where's the rendezvous?</h2>
             </div>
 
-            <p>Hack_NCState is held in Duke Energy Hall in James B. Hunt Jr. Library, which is on North Carolina State
-                University’s Centennial Campus.</p>
-        </div>
+<p>The operation is held in Talley Student Union in the heart of North Carolina State University’s Main Campus.</p>
+            
+            </div>
 
         <div class="list-entry">
             <div class="list-title">
                 <span class="font-icon">person</span>
-                <h2 class="font-mono font-bold">Who can participate?</h2>
+<h2 class="font-mono font-bold">Who's on the case?</h2>
             </div>
-
-            <p>Hack_NCState is open to all university students, and you don't need to be an NC State student to
-                participate!</p>
+                <p>This case is open to all university students. You don't need to be an NC State student to
+                join the investigation!</p>
         </div>
 
         <div id="faq-real" class="list-entry">
             <div class="list-title">
-                <h2 class="font-mono font-bold">FAQ</h2>
+<h2 class="font-mono font-bold">Debriefing</h2>
             </div>
 
             <div>
-                <h3 class="font-bold">How does the competition work?</h3>
-                <p>Teams of 2-4 students will work together to code or build a project and present it to the judges.
+<h3 class="font-bold">What's the MO?</h3>
+                    <p>Squads of 2-4 operatives will work together to build a project and present their findings to the chief.
                     This project can be or
-                    do anything; there are no constraints on what teams are allowed to develop, as long as the project
-                    fits the team’s
-                    chosen track. The judges will then select the best overall. Every project must be fully completed at
-                    the hackathon - no
-                    outside work/help is permitted.</p>
+                    do anything; there are no constraints on what you're allowed to develop, as long as the project
+                    fits your squad's
+                    chosen dossier. The chief will then select the best overall. Every part of the case must be cracked at
+                    the event - no
+                    outside intel or help is permitted.</p>
             </div>
 
             <div>
-                <h3 class="font-bold">What if I don't have a team?</h3>
-                <p>No worries! We will have a session early in the day where you can connect with other participants who
+<h3 class="font-bold">What if I'm a lone wolf?</h3>
+<p>No problem. We'll have a briefing early in the day where you can connect with other operatives who
                     are looking to
-                    fill out or form a team. This is an excellent opportunity to expand your already existing team or
-                    connect with others
-                    you haven't worked with before.
-                </p>
+                    fill out or form a squad. This is a perfect chance to expand your network or
+                    link up with new contacts.
+                                </p>
             </div>
 
             <div>
-                <h3 class="font-bold">What is a track?</h3>
-                <p>A track is designed to help focus your ideas into one specific subject area. You can think of it like
-                    a category. Some
-                    examples of tracks include social impact, financial technology, or data science.
-                </p>
+<h3 class="font-bold">What's a dossier?</h3>
+<p>A dossier helps focus your investigation on one specific subject area. You can think of it like
+                    a case category. Some
+                    examples of dossiers include fintech, cybersecurity, or infrastructure.
+                                </p>
             </div>
 
             <div>
-                <h3 class="font-bold">Is it free?</h3>
-                <p>Yes! Hack_NCState is 100% free. What’s more, as a participant you’ll receive a free t-shirt,
-                    stickers, food, alongside
-                    the opportunity to participate in fun workshops and activities. However this does mean we are unable
-                    to provide any kind
-                    of travel reimbursements.
-                </p>
+<h3 class="font-bold">What's the damage?</h3>
+<p>Zero. The Agency covers all expenses. What’s more, as an operative you’ll receive a standard-issue t-shirt,
+                    stickers, and rations, alongside
+                    the opportunity to participate in special workshops and activities. However, this does mean we are unable
+                    to provide any
+                    travel compensation.
+                                </p>
             </div>
 
             <div>
-                <h3 class="font-bold">What's the schedule?</h3>
-                <p>The event schedule and other detailed information will be sent out to registered participants as we
+<h3 class="font-bold">What's the timeline?</h3>
+                <p>The operation schedule and other key intel will be sent out to registered operatives as we
                     get closer to the
-                    event. If you’re registered, you can view all essential resources on <a
+                    event. If you’re registered, you can view all your case files on <a
                         href="https://today.hackncstate.org" class="underline">today.hackncstate.org</a> as
                     they’re released.
                 </p>
@@ -229,24 +252,25 @@
 
         <!-- content layer -->
         <div class="relative z-10 flex flex-col gap-4 info-container md:text-lg">
-            <h2 class="text-2xl font-mono font-bold md:text-4xl">Connect with us!</h2>
-            <p>People like you make Hack_NCState happen. If you want to be the first to hear from us on any new updates,
-                consider
-                joining our newsletter!</p>
-            <p>If you have any unanswered questions, don’t hesitate to reach out to us at <a
+            <h2 class="text-2xl font-mono font-bold md:text-4xl">Make Contact</h2>
+
+                <p>Investigators like you make Hack_NCState happen. Want to stay ahead of the city-wide mystery? Get the intel first by joining our network.</p>
+
+                    <p>Got a question that needs cracking? Don't let the trail go cold. Send a secure wire to <a
                     href="mailto:hackncstate@ncsu.edu" class="font-bold underline">hackncstate@ncsu.edu.</a></p>
+
             <a href="http://eepurl.com/iCj-vE" class="base-icon-button outline-button mt-16 md:w-fit">
-                <span class="text-xl font-bold md:mr-4">Join Newsletter</span>
+                <span class="text-xl font-bold md:mr-4">Follow the Agency</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
         </div>
     </div>
 
     <div id="sponsors-container" class="info-container flex flex-col gap-4 md:text-lg">
-        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Sponsors</h2>
-        <p>We are grateful to our sponsors for their support in making Hack_NCState possible. If you are interested
-            in
-            sponsoring Hack_NCState, please reach out to us at <a href="mailto:hackncstate@ncsu.edu"
+        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Key Allies</h2>
+
+                <p>Every operation needs its backers. We're grateful to our allies for providing the resources to make this
+            investigation possible. If you're interested in joining our network, send a secure message to <a href="mailto:hackncstate@ncsu.edu"
                 class="font-bold underline">hackncstate@ncsu.edu</a>.</p>
 
         <div id="sponsors-list"
@@ -267,11 +291,11 @@
     </div>
 
     <div id="organizers-container" class="info-container flex flex-col gap-4 -mt-8 md:gap-8 md:-mt-48 md:text-lg">
-        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Meet the Team</h2>
+        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Meet the Masterminds</h2>
 
 
         <div>
-            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Directors</h3>
+            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Lead Detectives</h3>
             <div id="directors-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.linkedin.com/in/pranavrajagopal/" target="_blank" class="organizer">
                     <img src="assets/img/organizers/pranav.jpg" alt="Pranav Rajagopal" class="organizer-photo">
@@ -312,12 +336,12 @@
                         <p>Director of Media & Finance</p>
                     </div>
                     <span class="font-icon text-3xl">link</span>
-                </a>
+                </a>   
             </div>
         </div>
 
         <div>
-            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Organizers</h3>
+            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Agents</h3>
             <div id="organizers-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.linkedin.com/in/aaryarajoju/" target="_blank" class="organizer">
                     <img src="assets/img/organizers/aarya.jpg" alt="Aarya Rajoju" class="organizer-photo">
@@ -397,11 +421,10 @@
         </div>
 
         <div class="flex flex-col gap-2">
-            <p>Are you a passionate NC State student? <span class="font-bold">Join the planning
-                    committee!</span></p>
+            <p>Got the knack for cracking cases? <span class="font-bold">Join the Agency.</span></p>
             <a href="https://getinvolved.ncsu.edu/organization/hackncstate"
                 class="base-icon-button outline-button self-start md:w-fit">
-                <span class="text-xl font-bold mr-5">Get Involved</span>
+                <span class="text-xl font-bold mr-5">Go Undercover</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
         </div>
@@ -410,8 +433,7 @@
 
 
     <div id="footer" class="relative">
-        <div class="absolute inset-0 z-0 bg-linear-to-tr from-red-600 to-red-900"></div>
-
+        <div class="absolute inset-0 z-0 bg-linear-to-tr from-gray-800 to-black"></div>
         <div class="relative z-1 inset-0 info-container flex flex-col gap-4 text-white !p-6 !md-0">
             <h2 class="text-2xl font-mono font-bold">Hack_NCState</h2>
             <div class="flex flex-col">
