@@ -88,3 +88,14 @@ a {
 .info-container-header {
     @apply text-2xl font-mono font-bold md:text-4xl;
 }
+
+/* Parallax styles */
+#parallax-container {
+    @apply fixed top-0 left-0 w-full -z-10 overflow-hidden pointer-events-none;
+}
+
+.parallax-layer {
+    @apply absolute top-0 left-0 w-full h-full bg-auto bg-no-repeat;
+    background-position: top center;
+    will-change: transform;
+}
