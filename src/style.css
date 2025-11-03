@@ -5,6 +5,8 @@ https://developers.google.com/fonts/docs/material_symbols#optimize_the_icon_font
 */
 @import "tailwindcss";
 
+@source not "/**/*.xcf";
+
 @theme {
     --font-sans: 'Lexend', sans-serif;
     --font-mono: 'Jetbrains Mono', monospace;
