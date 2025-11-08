@@ -32,28 +32,17 @@
 
     <script src="scripts/music-player.js"></script>
 
-    <a id="noir-music-player" href="#" onclick="playMusic()"
-        style="position:absolute; top:10px; left:10px; z-index:10000; background-color:#000000; color:#ffffff; border-radius:100%; font-weight:bold; display:flex; align-items:center; justify-content:center; width:55px; height:55px;">
-        <div style="position:relative; width:50px; height:50px; flex-shrink:0;">
+    <a title="Play Hack_NCState Theme" id="noir-music-player" href="#" onclick="playMusic()"
+        style="position:absolute; top:10px; left:10px; z-index:10000; background-color:#1f2937; color:#ffffff; border-radius:100%; font-weight:bold; display:flex; align-items:center; justify-content:center; width:45px; height:45px; filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.342));">
+        <div style="position:relative; width:40px; height:40px; flex-shrink:0;">
             <img id="cd-image" src="assets/img/cd.jpg" alt="Play Music"
                 style="width:100%; height:100%; border-radius:100%;">
             <div id="light"
-                style="position:absolute; bottom:4px; right:4px; width:10px; height:10px; background-color:red; border-radius:50%; box-shadow:0 0 4px red;">
+                style="position:absolute; bottom:1px; right:1px; width:8px; height:8px; background-color:#1f2937; border-radius:50%; box-shadow:0 0 3px #1f2937;">
             </div>
         </div>
         <audio id="music" src="assets/audio/jazz-noir-detective-music.mp3" loop></audio>
     </a>
-
-    <style>
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .spinning {
-            animation: spin 4s linear infinite;
-        }
-    </style>
 
     <div id="hero" class="relative h-dvh overflow-hidden">
         <!-- gradient -->
