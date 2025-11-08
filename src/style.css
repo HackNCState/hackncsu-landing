@@ -58,7 +58,7 @@ a {
 }
 
 .outline-button {
-    @apply outline-solid outline-2 outline-white;
+    @apply outline-solid outline-2 outline-gray-100;
 }
 
 .dark-outline-button {
@@ -66,7 +66,7 @@ a {
 }
 
 .list-title {
-    @apply text-2xl text-red-700 flex flex-row items-center gap-4 md:text-4xl;
+    @apply text-2xl text-gray-100 flex flex-row items-center gap-4 md:text-4xl;
 }
 
 .list-entry {
@@ -74,7 +74,7 @@ a {
 }
 
 .organizer {
-    @apply flex flex-row items-center gap-4 p-4 border border-gray-300 rounded-2xl hover:shadow-lg;
+    @apply flex flex-row items-center gap-4 p-4 border border-gray-600 rounded-2xl hover:shadow-lg;
 
     .organizer-photo {
         @apply w-16 h-16 rounded-full object-cover md:w-20 md:h-20;
