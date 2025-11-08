@@ -88,3 +88,19 @@ a {
 .info-container-header {
     @apply text-2xl font-mono font-bold md:text-4xl;
 }
+
+@keyframes spin-smooth {
+    from { transform: rotate(0deg); }
+
+    to { transform: rotate(360deg); }
+}
+
+.spinning {
+    animation: spin-smooth 4s linear infinite;
+}
+
+#light {
+    transition:
+        background-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
