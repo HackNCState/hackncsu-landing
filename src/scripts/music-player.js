@@ -1,7 +1,6 @@
 function playMusic() {
     const audio = document.getElementById("music");
     const cd = document.getElementById("cd-image");
-
     if (audio.paused) {
         audio.volume = 0.03;
         audio.play();
