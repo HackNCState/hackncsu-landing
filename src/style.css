@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols:FILL,ROND@0..1,100&icon_names=arrow_cool_down,arrow_forward,calendar_month,link,location_on,person&display=block');
 /** TODO: only include needed icons and other optimizations
 https://developers.google.com/fonts/docs/material_symbols#optimize_the_icon_font
@@ -6,33 +7,18 @@ https://developers.google.com/fonts/docs/material_symbols#optimize_the_icon_font
 @import "tailwindcss";
 
 @theme {
-    --font-sans: 'Lexend', sans-serif;
-    --font-mono: 'Jetbrains Mono', monospace;
+    --font-sans: 'Geist', sans-serif;
+    --font-mono: 'Syne Mono', monospace;
     --font-icon: 'Material Symbols', sans-serif;
+    --font-logo: 'Playfair Display', serif;
 }
 
 @font-face {
-    font-family: Jetbrains Mono;
+    font-family: Syne Mono;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-display: swap;
-    src: url("assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: Jetbrains Mono;
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("assets/fonts/JetBrainsMono-Bold.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: Jetbrains Mono;
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url("assets/fonts/JetBrainsMono-ExtraBold.woff2") format("woff2");
+    src: url("assets/fonts/Syne-Mono.ttf") format("truetype");
 }
 
 .info-container {
