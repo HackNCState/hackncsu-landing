@@ -10,7 +10,7 @@ https://developers.google.com/fonts/docs/material_symbols#optimize_the_icon_font
     --font-sans: 'Geist', sans-serif;
     --font-mono: 'Syne Mono', monospace;
     --font-icon: 'Material Symbols', sans-serif;
-    --font-logo: 'Playfair Display', sans-serif;
+    --font-logo: 'Playfair Display', serif;
 }
 
 @font-face {
