@@ -10,7 +10,7 @@
 const startDate = new Date("2026-02-14T11:00:00-05:00");
 
 // TODO: change to actual registration deadline (rn it is 7 days before the hackathon start date)
-const registrationDeadline = new Date("2026-02-07T11:00:00-05:00");
+const registrationDeadline = new Date("2026-02-01T11:00:00-05:00");
 // change to true when registration is open
 const registrationOpened = false;
 // ---------------------------------------
