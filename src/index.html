@@ -45,6 +45,8 @@
     </a>
 
     <style>
+        /* noir related styles (tmp) */
+
         @keyframes spin {
             from {
                 transform: rotate(0deg);
@@ -58,21 +60,71 @@
         .spinning {
             animation: spin 4s linear infinite;
         }
+
+        @keyframes flicker {
+
+            0%,
+            100% {
+                opacity: 0.0;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(var(--float-distance, -100px));
+            }
+        }
+
+        .binary-star {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-family: monospace;
+            font-weight: bold;
+            pointer-events: none;
+            opacity: 0.0;
+            will-change: opacity, transform;
+        }
     </style>
 
     <script src="scripts/parallax.js"></script>
 
     <!-- parallax bg container -->
     <div id="parallax-container">
-        <div class="parallax-layer" data-speed="0.3" data-offset="0"
-            style="background-image: url('assets/img/decor/background.webp');">
+        <div class="parallax-layer" data-speed="0.2" data-offset="0"
+            style="background-image: url('assets/img/decor/bg.webp');">
         </div>
-        <div class="parallax-layer" data-speed="0.5" data-offset="900"
-            style="background-image: url('assets/img/decor/bg2.webp');">
+
+        <div id="binary-stars-container" class="parallax-layer" data-speed="0.25" data-offset="0"></div>
+
+        <div class="parallax-layer" data-speed="0.3" data-offset="900"
+            style="background-image: url('assets/img/decor/b1.webp');">
         </div>
-        <div class="parallax-layer" data-speed="0.7" data-offset="1760"
-            style="background-image: url('assets/img/decor/bg3.webp');">
+
+        <div class="parallax-layer" data-speed="0.5" data-offset="1450"
+            style="background-image: url('assets/img/decor/b2.webp');">
         </div>
+
+        <div class="parallax-layer" data-speed="0.7" data-offset="1900"
+            style="background-image: url('assets/img/decor/b3.webp');">
+        </div>
+
+        <div class="parallax-layer" data-speed="0.9" data-offset="2500"
+            style="background-image: url('assets/img/decor/b4.webp');">
+        </div>
+
+        <!-- Tint layer with vignette -->
+        <div class="absolute top-0 left-0 w-full h-screen z-0"
+            style="background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.95) 100%);"></div>
     </div>
 
 
@@ -142,6 +194,7 @@
     </div>
 
     <script src="scripts/hero-resizer.js"></script>
+    <script src="scripts/binary-stars.js"></script>
 
     <div id="exposition" class="info-container relative z-10">
         <!-- Exposition -->
@@ -150,13 +203,13 @@
 
 
     <div id="description"
-        class="relative bg-[url(assets/img/hack1.jpg)] bg-bottom-right bg-no-repeat bg-cover text-white ">
+        class="relative bg-[url(assets/img/hack1.jpg)] bg-bottom-right bg-no-repeat bg-cover text-white md:bg-center md:mx-32 lg:mx-64 md:rounded-4xl md:overflow-hidden md:shadow-2xl md:shadow-black md:outline-2 md:outline-dashed md:outline-white">
 
         <!-- gradient layer -->
-        <div class="absolute inset-0 z-0 bg-black opacity-70"></div>
+        <div class="absolute inset-0 z-0 img-bg-gradient"></div>
 
         <!-- content layer -->
-        <div class="relative z-10 flex flex-col gap-4 info-container md:text-lg md:gap-8">
+        <div class="relative z-10 flex flex-col gap-4 info-container md:!mx-12 md:text-lg md:gap-8">
             <h2 class="info-container-header">A 24-hour race to crack the case.
             </h2>
             <p>This ain't no ordinary gig. It's a 24-hour investigation where operatives collaborate to solve problems
@@ -266,13 +319,13 @@
 
     </div>
 
-    <div id="contact" class="relative bg-[url(assets/img/hack2.jpg)] bg-center bg-no-repeat bg-cover text-white">
+    <div id="contact"
+        class="relative bg-[url(assets/img/hack2.jpg)] bg-center bg-no-repeat bg-cover text-white md:mx-32 lg:mx-64 md:rounded-4xl md:overflow-hidden md:shadow-2xl md:shadow-black md:outline-2 md:outline-dashed md:outline-white">
         <!-- gradient layer -->
-        <!--<div class="absolute inset-0 z-0 img-bg-gradient"></div>-->
-        <div class="absolute inset-0 z-0 bg-black opacity-60"></div>
+        <div class="absolute inset-0 z-0 img-bg-gradient"></div>
 
         <!-- content layer -->
-        <div class="relative z-10 flex flex-col gap-4 info-container md:text-lg">
+        <div class="relative z-10 flex flex-col gap-4 info-container md:!mx-12 md:text-lg">
             <h2 class="text-2xl font-mono font-bold md:text-4xl">Make Contact</h2>
 
             <p>Investigators like you make Hack_NCState happen. Want to stay ahead of the city-wide mystery? Get the
@@ -471,6 +524,10 @@
 
         <img class="absolute z-2 h-2/3 bottom-0 right-4 opacity-50" src="./assets/img/logo.png" alt="Hack_NCState Logo">
     </div>
+
+    <!-- Foreground Vignette -->
+    <div class="fixed inset-0 z-50 pointer-events-none"
+        style="background: radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(0,0,0,01) 100%);"></div>
 </body>
 
 </html>

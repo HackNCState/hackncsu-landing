@@ -36,7 +36,7 @@ https://developers.google.com/fonts/docs/material_symbols#optimize_the_icon_font
 }
 
 .info-container {
-    @apply p-6 md:mx-32 md:py-32;
+    @apply p-6 md:mx-32 lg:mx-64 md:py-32;
 }
 
 .countdown-item {
@@ -95,7 +95,7 @@ a {
 }
 
 .parallax-layer {
-    @apply absolute top-0 left-0 w-full h-full bg-auto bg-no-repeat;
+    @apply absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat;
     background-position: top center;
     will-change: transform;
 }
