@@ -21,7 +21,7 @@
           min-width:60px;
           position:fixed;
           right:50px;
-          top:0;
+          top:0;    
           width:10%;
           z-index:10000"
         href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=black"
@@ -32,35 +32,17 @@
 
     <script src="scripts/music-player.js"></script>
 
-    <a id="noir-music-player" href="#" onclick="playMusic()"
-        style="position:absolute; top:10px; left:10px; z-index:10000; background-color:#000000; color:#ffffff; border-radius:5px; font-weight:bold; display:flex; align-items:center; justify-content:center; width:55px; height:55px;">
-        <div style="position:relative; width:50px; height:50px; flex-shrink:0;">
+    <a title="Play Hack_NCState Theme" id="noir-music-player" href="#" onclick="playMusic()"
+        style="position:absolute; top:10px; left:10px; z-index:10000; background-color:#1f2937; color:#ffffff; border-radius:100%; font-weight:bold; display:flex; align-items:center; justify-content:center; width:45px; height:45px; filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.342));">
+        <div style="position:relative; width:40px; height:40px; flex-shrink:0;">
             <img id="cd-image" src="assets/img/cd.jpg" alt="Play Music"
-                style="width:100%; height:100; border-radius:50%;">
+                style="width:100%; height:100%; border-radius:100%;">
             <div id="light"
-                style="position:absolute; bottom:4px; right:4px; width:10px; height:10px; background-color:red; border-radius:50%; box-shadow:0 0 4px red;">
+                style="position:absolute; bottom:1px; right:1px; width:8px; height:8px; background-color:#1f2937; border-radius:50%; box-shadow:0 0 3px #1f2937;">
             </div>
         </div>
         <audio id="music" src="assets/audio/jazz-noir-detective-music.mp3" loop></audio>
     </a>
-
-    <style>
-        /* noir related styles (tmp) */
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .spinning {
-            animation: spin 4s linear infinite;
-        }
-    </style>
 
     <script src="scripts/parallax.js"></script>
 
@@ -103,8 +85,8 @@
             <div class="grow flex flex-col justify-evenly text-center md:items-center">
                 <div class="flex flex-col justify-center items-center text-center">
                     <img src="./assets/img/logo.png" alt="Hack_NCState Logo" class="w-2/5 mb-4 md:w-52">
-                    <img src="./assets/img/name.png" alt="Hack_NCState Name" class="w-3/4 md:w-96">
-                    <div class="w-3/4 flex flex-row justify-between items-center text-2xl font-mono md:w-96">
+                    <h1 class="font-logo text-5xl">Hack_NCState</h1>
+                    <div class="w-3/4 flex flex-row justify-between items-center text-2xl font-mono mt-1 md:w-80">
                         <span>2</span>
                         <span>0</span>
                         <span>2</span>
@@ -114,7 +96,7 @@
                 </div>
                 <h1 class="sr-only">Hack_NCState 2026</h1>
 
-                <div>
+                <div class="font-mono">
                     <h2 class="text-2xl font-bold">Feb 14th and 15th</h2>
                     <h3 id="registration-flavor" class="text-xl">Registration is now open!</h3>
                 </div>
@@ -140,7 +122,7 @@
                         </div>
                     </div>
 
-                    <a id="hero-button" href="https://example.com" class="base-icon-button countdown-button">
+                    <a id="hero-button" href="/register" class="base-icon-button countdown-button">
                         <span class="text-2xl font-bold">Register Free</span>
                         <span class="font-icon text-3xl">arrow_forward</span>
                     </a>
@@ -164,7 +146,8 @@
 
     <div id="exposition" class="info-container relative z-10">
         <!-- Exposition -->
-        <h2 class="text-lg md:text-3xl">Hack_NCState is North Carolina State University's premier hackathon.</h2>
+        <h2 class="text-lg md:text-3xl font-mono">Hack_NCState is North Carolina State University's premier hackathon.
+        </h2>
     </div>
 
 
@@ -178,18 +161,16 @@
         <div class="relative z-10 flex flex-col gap-4 info-container md:!mx-12 md:text-lg md:gap-8">
             <h2 class="info-container-header">A 24-hour race to crack the case.
             </h2>
-            <p>This ain't no ordinary gig. It's a 24-hour investigation where operatives collaborate to solve problems
-                using technology.
-                Whether you're a seasoned PI or a rookie gumshoe, you’ll form squads, build your case from scratch -
-                like
-                websites, apps, or hardware, and bring your solution to light. Grab your crew and start digging for
-                clues!</p>
-            <p>The Agency covers the tab. Hack_NCState is <span class="font-bold">100% free</span> for all operatives to
-                attend! Enjoy complimentary
-                rations, a standard-issue t-shirt, stickers, and other activities while you're on the case.</p>
+            <p>This isn't your ordinary gig. It's a 24-hour competition where you collaborate to solve problems using
+                technology.
+                Whether you're a seasoned investigator or a new recruit, you’ll form squads, build your project from
+                scratch - like
+                websites, apps, or hardware, and bring your solution to light. Grab your crew and start hacking!</p>
+            <p>Hack_NCState is <span class="font-bold">100% free</span> for all to attend! Enjoy complimentary
+                food, a standard-issue t-shirt, stickers, and other activities while you're on the case.</p>
             <a href="https://hackncstate2025.devpost.com/project-gallery"
                 class="base-icon-button outline-button mt-16 md:w-fit">
-                <span class="text-xl font-bold md:mr-4">Review Past Case Files</span>
+                <span class="text-xl font-bold md:mr-4">Review Past Projects</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
         </div>
@@ -201,8 +182,8 @@
                 <span class="font-icon">calendar_month</span>
                 <h2 class="font-mono font-bold">When's the operation?</h2>
             </div>
-            <p>The operation runs through the weekend of February 14th and 15th. You start cracking the case at 11 AM on
-                Saturday and have until 11 AM on Sunday to submit your findings.</p>
+            <p>Hack_NCState 2026 will run through the weekend of February 14th and 15th. You begin coding at 11 AM on
+                Saturday and have until 11 AM on Sunday to submit your project .</p>
         </div>
 
         <div class="list-entry">
@@ -211,7 +192,7 @@
                 <h2 class="font-mono font-bold">Where's the rendezvous?</h2>
             </div>
 
-            <p>The operation is held in Talley Student Union in the heart of North Carolina State University’s Main
+            <p>Hack_NCState is be held in Talley Student Union in the heart of North Carolina State University’s Main
                 Campus.</p>
 
         </div>
@@ -221,64 +202,65 @@
                 <span class="font-icon">person</span>
                 <h2 class="font-mono font-bold">Who's on the case?</h2>
             </div>
-            <p>This case is open to all university students. You don't need to be an NC State student to
-                join the investigation!</p>
+            <p>Hack_NCState is open to all university students. You don't need to be an NC State student to
+                participate!</p>
         </div>
 
         <div id="faq-real" class="list-entry">
             <div class="list-title">
-                <h2 class="font-mono font-bold">Debriefing</h2>
+                <h2 class="font-mono font-bold">FAQ</h2>
             </div>
 
             <div>
-                <h3 class="font-bold">What's the MO?</h3>
-                <p>Squads of 2-4 operatives will work together to build a project and present their findings to the
-                    chief.
+                <h3 class="font-bold">How does the competition work?</h3>
+                <p class="ml-8 mt-1">Teams of 2-4 students will work together to code or build a project and present it
+                    to the judges.
                     This project can be or
-                    do anything; there are no constraints on what you're allowed to develop, as long as the project
-                    fits your squad's
-                    chosen dossier. The chief will then select the best overall. Every part of the case must be cracked
-                    at
-                    the event - no
-                    outside intel or help is permitted.</p>
+                    do anything; there are no constraints on what teams are allowed to develop, as long as the project
+                    fits the team’s
+                    chosen track. The judges will then select the best overall. Every project must be fully completed at
+                    the hackathon - no
+                    outside work/help is permitted.</p>
             </div>
 
             <div>
-                <h3 class="font-bold">What if I'm a lone wolf?</h3>
-                <p>No problem. We'll have a briefing early in the day where you can connect with other operatives who
+                <h3 class="font-bold">What if I don't have a team?</h3>
+                <p class="ml-8 mt-1">No worries! We will have a session early in the day where you can connect with
+                    other participants who
                     are looking to
-                    fill out or form a squad. This is a perfect chance to expand your network or
-                    link up with new contacts.
+                    fill out or form a team. This is an excellent opportunity to expand your already existing team or
+                    connect with others
+                    you haven't worked with before.
                 </p>
             </div>
 
             <div>
-                <h3 class="font-bold">What's a dossier?</h3>
-                <p>A dossier helps focus your investigation on one specific subject area. You can think of it like
-                    a case category. Some
-                    examples of dossiers include fintech, cybersecurity, or infrastructure.
+                <h3 class="font-bold">What is a track?</h3>
+                <p class="ml-8 mt-1">A track is designed to help focus your ideas into one specific subject area. You
+                    can think of it like
+                    a category. Some
+                    examples of tracks include social impact, financial technology, or data science.
                 </p>
             </div>
 
             <div>
-                <h3 class="font-bold">What's the damage?</h3>
-                <p>Zero. The Agency covers all expenses. What’s more, as an operative you’ll receive a standard-issue
+                <h3 class="font-bold">Is it free?</h3>
+                <p class="ml-8 mt-1">Yes! Hack_NCState is 100% free. What’s more, as a participant you’ll receive a free
                     t-shirt,
-                    stickers, and rations, alongside
-                    the opportunity to participate in special workshops and activities. However, this does mean we are
-                    unable
-                    to provide any
-                    travel compensation.
+                    stickers, food, alongside
+                    the opportunity to participate in fun workshops and activities. However this does mean we are unable
+                    to provide any kind
+                    of travel reimbursements.
                 </p>
             </div>
 
             <div>
-                <h3 class="font-bold">What's the timeline?</h3>
-                <p>The operation schedule and other key intel will be sent out to registered operatives as we
+                <h3 class="font-bold">What's the schedule?</h3>
+                <p class="ml-8 mt-1">The event schedule and other detailed information will be sent out to registered
+                    participants as we
                     get closer to the
-                    event. If you’re registered, you can view all your case files on <a
-                        href="https://today.hackncstate.org" class="underline">today.hackncstate.org</a> as
-                    they’re released.
+                    event. During the event, you'll be able to view all essential resources on <a
+                        href="https://today.hackncstate.org" class="underline">today.hackncstate.org</a>.
                 </p>
             </div>
         </div>
@@ -292,27 +274,29 @@
 
         <!-- content layer -->
         <div class="relative z-10 flex flex-col gap-4 info-container md:!mx-12 md:text-lg">
-            <h2 class="text-2xl font-mono font-bold md:text-4xl">Make Contact</h2>
+            <h2 class="text-2xl font-mono font-bold md:text-4xl">Connect with us!</h2>
 
-            <p>Investigators like you make Hack_NCState happen. Want to stay ahead of the city-wide mystery? Get the
-                intel first by joining our network.</p>
+            <p>People like you make Hack_NCState happen. If you want to be the first to hear from us on any new updates,
+                consider
+                joining our newsletter!</p>
 
-            <p>Got a question that needs cracking? Don't let the trail go cold. Send a secure wire to <a
+            <p>If you have any unanswered questions, don’t hesitate to reach out to us at <a
                     href="mailto:hackncstate@ncsu.edu" class="font-bold underline">hackncstate@ncsu.edu.</a></p>
 
             <a href="http://eepurl.com/iCj-vE" class="base-icon-button outline-button mt-16 md:w-fit">
-                <span class="text-xl font-bold md:mr-4">Follow the Agency</span>
+                <span class="text-xl font-bold md:mr-4">Join our Newsletter</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
         </div>
     </div>
 
     <div id="sponsors-container" class="info-container flex flex-col gap-4 md:text-lg">
-        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Key Allies</h2>
+        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Sponsors</h2>
 
-        <p>Every operation needs its backers. We're grateful to our allies for providing the resources to make this
-            investigation possible. If you're interested in joining our network, send a secure message to <a
-                href="mailto:hackncstate@ncsu.edu" class="font-bold underline">hackncstate@ncsu.edu</a>.</p>
+        <p>We are grateful to our sponsors for their support in making Hack_NCState possible. If you are interested
+            in
+            sponsoring Hack_NCState, please reach out to us at <a href="mailto:hackncstate@ncsu.edu"
+                class="font-bold underline">hackncstate@ncsu.edu</a>.</p>
 
         <div id="sponsors-list"
             class="my-8 flex flex-row flex-wrap justify-center items-center gap-y-12 gap-x-4 md:gap-x-16">
@@ -327,16 +311,18 @@
             <!-- Lowe's logo is slightly smaller to look better to the eye -->
             <a class="mx-4 md:mx-6 w-40 lg:w-65" href="https://www.cisco.com/"><img
                     src="assets/img/sponsors/cisco-white.png" alt="Cisco"></a>
+            <a class="mx-4 md:mx-6 w-40 lg:w-65" href="https://irods.org/"><img
+                    src="assets/img/sponsors/irods-white.png" alt="iRODS"></a>
         </div>
 
     </div>
 
     <div id="organizers-container" class="info-container flex flex-col gap-4 -mt-8 md:gap-8 md:-mt-48 md:text-lg">
-        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Meet the Masterminds</h2>
+        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Meet the Team</h2>
 
 
         <div>
-            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Lead Detectives</h3>
+            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Directors</h3>
             <div id="directors-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.linkedin.com/in/pranavrajagopal/" target="_blank" class="organizer">
                     <img src="assets/img/organizers/pranav.jpg" alt="Pranav Rajagopal" class="organizer-photo">
@@ -382,7 +368,7 @@
         </div>
 
         <div>
-            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Agents</h3>
+            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Organizers</h3>
             <div id="organizers-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.linkedin.com/in/aaryarajoju/" target="_blank" class="organizer">
                     <img src="assets/img/organizers/aarya.jpg" alt="Aarya Rajoju" class="organizer-photo">
@@ -462,10 +448,11 @@
         </div>
 
         <div class="flex flex-col gap-2">
-            <p>Got the knack for cracking cases? <span class="font-bold">Join the Agency.</span></p>
+            <p>Are you a passionate NC State student? <span class="font-bold">Join the planning
+                    committee!</span></p>
             <a href="https://getinvolved.ncsu.edu/organization/hackncstate"
                 class="base-icon-button outline-button self-start md:w-fit">
-                <span class="text-xl font-bold mr-5">Go Undercover</span>
+                <span class="text-xl font-bold mr-5">Get Involved</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
         </div>
@@ -476,7 +463,7 @@
     <div id="footer" class="relative">
         <div class="absolute inset-0 z-0 bg-linear-to-t from-black to-transparent"></div>
         <div class="relative z-1 inset-0 info-container flex flex-col gap-4 text-white !p-6 !md-0">
-            <h2 class="text-2xl font-mono font-bold">Hack_NCState</h2>
+            <h2 class="text-2xl font-logo font-bold">Hack_NCState</h2>
             <div class="flex flex-col">
                 <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" class="font-bold underline">MLH
                     Code of
@@ -494,6 +481,24 @@
     <!-- Foreground Vignette -->
     <div class="hidden md:block fixed inset-0 z-50 pointer-events-none"
         style="background: radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);"></div>
+
+    <script>
+        console.log(`
+███╗   ██╗ ██████╗
+████╗  ██║██╔════╝
+██╔██╗ ██║██║
+██║╚██╗██║██║
+██║ ╚████║╚██████╗
+╚═╝  ╚═══╝ ╚═════╝
+
+ ██████╗ ████████╗ █████╗ ████████╗███████╗
+██╔════╝ ╚══██╔══╝██╔══██╗╚══██╔══╝██╔════╝
+███████╗    ██║   ███████║   ██║   ███████╗
+╚════██║    ██║   ██╔══██║   ██║   ██╔════╝
+███████║    ██║   ██║  ██║   ██║   ███████║
+    `);
+    </script>
+
 </body>
 
 </html>
