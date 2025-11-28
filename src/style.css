@@ -118,6 +118,7 @@ a {
     pointer-events: none;
     opacity: 0.0;
     will-change: opacity, transform;
+}
   
 @keyframes spin-smooth {
     from { transform: rotate(0deg); }
