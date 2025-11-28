@@ -99,3 +99,37 @@ a {
     background-position: top center;
     will-change: transform;
 }
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 0.0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(var(--float-distance, -100px));
+    }
+}
+
+.binary-star {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: monospace;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0.0;
+    will-change: opacity, transform;
+}
