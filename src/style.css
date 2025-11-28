@@ -22,7 +22,7 @@ https://developers.google.com/fonts/docs/material_symbols#optimize_the_icon_font
 }
 
 .info-container {
-    @apply p-6 md:mx-32 md:py-32;
+    @apply p-6 md:mx-32 lg:mx-64 md:py-32;
 }
 
 .countdown-item {
@@ -75,6 +75,51 @@ a {
     @apply text-2xl font-mono font-bold md:text-4xl;
 }
 
+/* Parallax styles */
+#parallax-container {
+    @apply fixed top-0 left-0 w-full -z-10 overflow-hidden pointer-events-none;
+}
+
+.parallax-layer {
+    @apply absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat;
+    background-position: top center;
+    will-change: transform;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 0.0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(var(--float-distance, -100px));
+    }
+}
+
+.binary-star {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: monospace;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0.0;
+    will-change: opacity, transform;
+}
+  
 @keyframes spin-smooth {
     from { transform: rotate(0deg); }
 
