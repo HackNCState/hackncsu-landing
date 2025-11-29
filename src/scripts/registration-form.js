@@ -193,6 +193,9 @@ document.getElementById('registration-form').addEventListener('submit', function
 
     fetch("https://script.google.com/macros/s/AKfycbw4rDwRn7d5ynAUGAAlCR9KyAZ0Jt9cpDeU5vleGbXqXfwFvUWBdCZ4sMCXrXLzPOO6lA/exec", {
         method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
         body: new URLSearchParams(data).toString()
     }).then(response => {
         return response.json();
