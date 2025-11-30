@@ -202,7 +202,8 @@ document.getElementById('registration-form').addEventListener('submit', function
                 data['Heard of Hack_NCState Via'] = value;
             }
         } else {
-            data[key] = value;
+            if (value !== 'other')
+                data[key] = value;
         }
     }
     
