@@ -29,18 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // T-shirt Size - Other field
-    document.getElementById('tshirtSize').addEventListener('change', function () {
-        const otherField = document.getElementById('tshirtOther');
-        if (this.value === 'other') {
-            otherField.style.display = 'block';
-            document.getElementById('tshirtOtherText').required = true;
-        } else {
-            otherField.style.display = 'none';
-            document.getElementById('tshirtOtherText').required = false;
-        }
-    });
-
     // Dietary Restrictions - Other field
     document.getElementById('dietaryOtherCheck').addEventListener('change', function () {
         const otherField = document.getElementById('dietaryOther');
@@ -192,7 +180,7 @@ document.getElementById('registration-form').addEventListener('submit', function
 
     listKeys = ['Dietary Restrictions', 'Excited to Meet Sponsors', 'Heard of Sponsors', 'Reasons for Participating'];
 
-    otherKeys = ['dietaryOtherText', 'genderOtherText', 'levelOfStudyOtherText', 'tshirtOtherText', 'hearAboutUsOtherText'];
+    otherKeys = ['dietaryOtherText', 'genderOtherText', 'levelOfStudyOtherText', 'hearAboutUsOtherText'];
 
     // Handle regular inputs
     for (let [key, value] of formData.entries()) {
@@ -212,8 +200,6 @@ document.getElementById('registration-form').addEventListener('submit', function
                 data['Gender'] = value;
             } else if (key === 'levelOfStudyOtherText' && value.trim() !== '') {
                 data['Level of Study'] = value;
-            } else if (key === 'tshirtOtherText' && value.trim() !== '') {
-                data['Shirt Size'] = value;
             } else if (key === 'hearAboutUsOtherText' && value.trim() !== '') {
                 data['Heard of Hack_NCState Via'] = value;
             }
@@ -230,7 +216,7 @@ document.getElementById('registration-form').addEventListener('submit', function
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="text-xl font-bold">Submitting...</span><span class="font-icon text-2xl">check</span>';
 
-    fetch("https://script.google.com/macros/s/AKfycbyPO3Wb13yJBp9zRDXt4IvT4J3uGUSFnxU3lWtSYgBvmVKv4G5RCy-VJIc81riE2o5a/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwnhFAwh4VM9ogCE0feZPJsHRbVfP4UjyLxohbfRFPXSfEXXDafyd3-1Ur9y-whhzdaFw/exec", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -244,9 +230,18 @@ document.getElementById('registration-form').addEventListener('submit', function
 
             console.log('Success:', data);
             if (data.result === 'success') {
-                alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
+                // Hide form and progress
+                document.getElementById('registration-form').style.display = 'none';
+                document.getElementById('progress-container').style.display = 'none';
+
+                // Show success message
+                const successMsg = document.getElementById('success-message');
+                successMsg.classList.remove('hidden');
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                alert(`Registration failed: ${data.message || data.error || 'Please try again.'}`);
+                alert(`Sorry, we couldn't register you! ${data.message || data.error || 'Please try again.'}`);
             }
         })
         .catch(error => {
