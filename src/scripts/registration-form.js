@@ -222,7 +222,6 @@ document.getElementById('registration-form').addEventListener('submit', function
             if (data.success) {
                 alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
             } else {
-                // If duplicate or error, show custom message
                 alert(`Registration failed: ${data.message || data.error || 'Please try again.'}`);
             }
             console.log('Response:', data);
@@ -231,6 +230,8 @@ document.getElementById('registration-form').addEventListener('submit', function
             console.error('Network or script error:', error);
             alert('There was an error submitting your registration. Please try again later.');
         });
+    
+    console.log(response);
 
     window.location.href = './index.html';
 });
