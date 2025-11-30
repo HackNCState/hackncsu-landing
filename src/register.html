@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-zinc-950 text-gray-200">
-<script src="scripts/parallax.js"></script>
+    <script src="scripts/parallax.js"></script>
 
     <!-- parallax bg container -->
     <div id="parallax-container">
@@ -49,7 +49,7 @@
     <!-- Registration Form Container -->
     <div class="relative z-10 min-h-screen flex items-center justify-center py-12">
         <div class="info-container w-full max-w-4xl">
-            
+
             <!-- Logo and Title -->
             <div class="flex flex-col items-center text-center mb-8">
                 <img src="./assets/img/logo.png" alt="Hack_NCState Logo" class="w-32 mb-4">
@@ -58,29 +58,29 @@
             </div>
 
             <!-- Progress Indicator -->
-            <div class="flex justify-between items-center mb-8 px-4">
-                <div class="flex items-center flex-1">
+            <div class="flex justify-center items-center mb-8 px-4">
+                <div class="flex items-center">
                     <div class="progress-step active" data-step="1">
                         <div class="progress-circle">1</div>
                         <span class="progress-label">Contact</span>
                     </div>
                     <div class="progress-line"></div>
                 </div>
-                <div class="flex items-center flex-1">
+                <div class="flex items-center">
                     <div class="progress-step" data-step="2">
                         <div class="progress-circle">2</div>
                         <span class="progress-label">Demographics</span>
                     </div>
                     <div class="progress-line"></div>
                 </div>
-                <div class="flex items-center flex-1">
+                <div class="flex items-center">
                     <div class="progress-step" data-step="3">
                         <div class="progress-circle">3</div>
                         <span class="progress-label">Qualifiers</span>
                     </div>
                     <div class="progress-line"></div>
                 </div>
-                <div class="flex items-center flex-1">
+                <div class="flex items-center">
                     <div class="progress-step" data-step="4">
                         <div class="progress-circle">4</div>
                         <span class="progress-label">Preferences</span>
@@ -89,17 +89,17 @@
             </div>
 
             <form id="registration-form" class="bg-zinc-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700">
-                
+
                 <!-- Section 1: Contact Info -->
                 <div class="form-section active" data-section="1">
                     <h3 class="font-mono text-2xl font-bold mb-6 text-center">Contact Information</h3>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div class="form-group">
                             <label for="firstName" class="form-label">First Name *</label>
                             <input type="text" id="firstName" name="First Name" class="form-input" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="lastName" class="form-label">Last Name *</label>
                             <input type="text" id="lastName" name="Last Name" class="form-input" required>
@@ -114,23 +114,29 @@
                     <div class="form-group mb-4">
                         <label for="email" class="form-label">Email Address (.edu preferred) *</label>
                         <input type="email" id="email" name="Email" class="form-input" required>
-                        <p class="text-sm text-gray-400 mt-1">We prefer .edu email addresses for verification purposes.</p>
+                        <p class="text-sm text-gray-400 mt-1">We prefer .edu email addresses for verification purposes.
+                        </p>
                     </div>
 
                     <div class="form-group mb-4">
                         <label for="discord" class="form-label">Discord Username *</label>
                         <input type="text" id="discord" name="Discord" class="form-input" required>
-                        <p class="text-sm text-gray-400 mt-1">A Discord username is necessary to participate in Hack_NCState.</p>
+                        <p class="text-sm text-gray-400 mt-1">A Discord username is necessary to participate in
+                            Hack_NCState.</p>
                     </div>
 
                     <div class="form-group mb-6">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="electronicConsent" name="Agree to Fill" class="form-checkbox" required>
-                            <span class="text-sm">By filling out this electronic form, I understand it counts as a physical and legally binding signature. *</span>
+                            <input type="checkbox" id="electronicConsent" name="Agree to Fill" class="form-checkbox"
+                                required>
+                            <span class="text-sm">By checking this box, I acknowledge that the information I have
+                                provided is accurate, and I understand that submitting this form electronically is the
+                                equivalent of providing my signature. *</span>
                         </label>
                     </div>
 
-                    <button type="button" class="btn-next base-icon-button countdown-button w-full justify-center" onclick="nextSection(1)">
+                    <button type="button" class="btn-next base-icon-button countdown-button w-full justify-center"
+                        onclick="nextSection(1)">
                         <span class="text-xl font-bold">Next Section</span>
                         <span class="font-icon text-2xl">arrow_forward</span>
                     </button>
@@ -139,21 +145,54 @@
                 <!-- Section 2: Demographics -->
                 <div class="form-section" data-section="2">
                     <h3 class="font-mono text-2xl font-bold mb-6 text-center">Demographics</h3>
-                    
+
                     <div class="form-group mb-4">
-                        <label for="school" class="form-label">School Attending/Attended *</label>
-                        <select id="school" name="University" class="form-input" required>
+                        <label class="form-label">School Attending/Attended *</label>
+
+                        <input type="text" id="schoolSearch" class="form-input mb-2"
+                            placeholder="Search for your school...">
+
+                        <select id="schoolSelect" name="University" class="form-input" required>
                             <option value="">Select your school...</option>
-                            <option value="nc-state">North Carolina State University</option>
-                            <option value="unc-chapel-hill">University of North Carolina at Chapel Hill</option>
-                            <option value="duke">Duke University</option>
-                            <option value="uncc">University of North Carolina at Charlotte</option>
-                            <option value="appalachian">Appalachian State University</option>
-                            <option value="ecu">East Carolina University</option>
-                            <option value="wake-forest">Wake Forest University</option>
-                            <option value="other">Other</option>
                         </select>
                     </div>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            let allSchools = [];
+
+                            const select = document.getElementById("schoolSelect");
+                            const searchInput = document.getElementById("schoolSearch");
+
+                            fetch("./assets/lists/schools.json")
+                                .then(res => res.json())
+                                .then(schools => {
+                                    allSchools = schools;
+                                    renderSchools(schools);
+                                });
+
+                            function renderSchools(list) {
+                                // Clear existing options (except the placeholder)
+                                select.innerHTML = '<option value="">Select your school...</option>';
+
+                                list.forEach(name => {
+                                    const opt = document.createElement("option");
+                                    opt.value = name;
+                                    opt.textContent = name;
+                                    select.appendChild(opt);
+                                });
+                            }
+
+                            searchInput.addEventListener("input", () => {
+                                const query = searchInput.value.toLowerCase();
+                                const filtered = allSchools.filter(s =>
+                                    s.toLowerCase().includes(query)
+                                );
+                                renderSchools(filtered);
+                            });
+                        });
+
+                    </script>
 
                     <div class="form-group mb-4">
                         <label for="major" class="form-label">What is/was your major? *</label>
@@ -203,20 +242,79 @@
                             <option value="AF">Afghanistan</option>
                             <option value="AL">Albania</option>
                             <option value="DZ">Algeria</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AO">Angola</option>
+                            <option value="AG">Antigua and Barbuda</option>
                             <option value="AR">Argentina</option>
+                            <option value="AM">Armenia</option>
                             <option value="AU">Australia</option>
                             <option value="AT">Austria</option>
+                            <option value="AZ">Azerbaijan</option>
+                            <option value="BS">Bahamas</option>
+                            <option value="BH">Bahrain</option>
                             <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BY">Belarus</option>
                             <option value="BE">Belgium</option>
+                            <option value="BZ">Belize</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BT">Bhutan</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="BA">Bosnia and Herzegovina</option>
+                            <option value="BW">Botswana</option>
                             <option value="BR">Brazil</option>
+                            <option value="BN">Brunei Darussalam</option>
+                            <option value="BG">Bulgaria</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="CV">Cabo Verde</option>
+                            <option value="KH">Cambodia</option>
+                            <option value="CM">Cameroon</option>
                             <option value="CA">Canada</option>
+                            <option value="CF">Central African Republic</option>
+                            <option value="TD">Chad</option>
+                            <option value="CL">Chile</option>
                             <option value="CN">China</option>
                             <option value="CO">Colombia</option>
+                            <option value="KM">Comoros</option>
+                            <option value="CD">Congo (Democratic Republic)</option>
+                            <option value="CG">Congo (Republic)</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="CI">Côte d’Ivoire</option>
+                            <option value="HR">Croatia</option>
+                            <option value="CU">Cuba</option>
+                            <option value="CY">Cyprus</option>
+                            <option value="CZ">Czech Republic</option>
                             <option value="DK">Denmark</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="DO">Dominican Republic</option>
+                            <option value="EC">Ecuador</option>
                             <option value="EG">Egypt</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="GQ">Equatorial Guinea</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="EE">Estonia</option>
+                            <option value="SZ">Eswatini</option>
+                            <option value="ET">Ethiopia</option>
+                            <option value="FJ">Fiji</option>
+                            <option value="FI">Finland</option>
                             <option value="FR">France</option>
+                            <option value="GA">Gabon</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgia</option>
                             <option value="DE">Germany</option>
+                            <option value="GH">Ghana</option>
                             <option value="GR">Greece</option>
+                            <option value="GD">Grenada</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GW">Guinea-Bissau</option>
+                            <option value="GY">Guyana</option>
+                            <option value="HT">Haiti</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HU">Hungary</option>
+                            <option value="IS">Iceland</option>
                             <option value="IN">India</option>
                             <option value="ID">Indonesia</option>
                             <option value="IR">Iran</option>
@@ -224,38 +322,125 @@
                             <option value="IE">Ireland</option>
                             <option value="IL">Israel</option>
                             <option value="IT">Italy</option>
+                            <option value="JM">Jamaica</option>
                             <option value="JP">Japan</option>
+                            <option value="JO">Jordan</option>
+                            <option value="KZ">Kazakhstan</option>
                             <option value="KE">Kenya</option>
-                            <option value="KR">Korea, Republic of</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="KG">Kyrgyzstan</option>
+                            <option value="LA">Lao People’s Democratic Republic</option>
+                            <option value="LV">Latvia</option>
+                            <option value="LB">Lebanon</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libya</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Lithuania</option>
+                            <option value="LU">Luxembourg</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="MV">Maldives</option>
+                            <option value="ML">Mali</option>
+                            <option value="MT">Malta</option>
+                            <option value="MH">Marshall Islands</option>
+                            <option value="MR">Mauritania</option>
+                            <option value="MU">Mauritius</option>
                             <option value="MX">Mexico</option>
+                            <option value="FM">Micronesia</option>
+                            <option value="MD">Moldova</option>
+                            <option value="MC">Monaco</option>
+                            <option value="MN">Mongolia</option>
+                            <option value="ME">Montenegro</option>
+                            <option value="MA">Morocco</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="MM">Myanmar</option>
+                            <option value="NA">Namibia</option>
+                            <option value="NR">Nauru</option>
+                            <option value="NP">Nepal</option>
                             <option value="NL">Netherlands</option>
                             <option value="NZ">New Zealand</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Niger</option>
                             <option value="NG">Nigeria</option>
+                            <option value="MK">North Macedonia</option>
                             <option value="NO">Norway</option>
+                            <option value="OM">Oman</option>
                             <option value="PK">Pakistan</option>
+                            <option value="PW">Palau</option>
+                            <option value="PA">Panama</option>
+                            <option value="PG">Papua New Guinea</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Peru</option>
                             <option value="PH">Philippines</option>
                             <option value="PL">Poland</option>
                             <option value="PT">Portugal</option>
+                            <option value="QA">Qatar</option>
+                            <option value="RO">Romania</option>
                             <option value="RU">Russian Federation</option>
+                            <option value="RW">Rwanda</option>
+                            <option value="KN">Saint Kitts and Nevis</option>
+                            <option value="LC">Saint Lucia</option>
+                            <option value="VC">Saint Vincent and the Grenadines</option>
+                            <option value="WS">Samoa</option>
+                            <option value="SM">San Marino</option>
+                            <option value="ST">Sao Tome and Principe</option>
                             <option value="SA">Saudi Arabia</option>
+                            <option value="SN">Senegal</option>
+                            <option value="RS">Serbia</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leone</option>
                             <option value="SG">Singapore</option>
+                            <option value="SK">Slovakia</option>
+                            <option value="SI">Slovenia</option>
+                            <option value="SB">Solomon Islands</option>
+                            <option value="SO">Somalia</option>
                             <option value="ZA">South Africa</option>
+                            <option value="KR">South Korea</option>
+                            <option value="SS">South Sudan</option>
                             <option value="ES">Spain</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="SD">Sudan</option>
+                            <option value="SR">Suriname</option>
                             <option value="SE">Sweden</option>
                             <option value="CH">Switzerland</option>
+                            <option value="SY">Syria</option>
+                            <option value="TJ">Tajikistan</option>
+                            <option value="TZ">Tanzania</option>
                             <option value="TH">Thailand</option>
+                            <option value="TL">Timor-Leste</option>
+                            <option value="TG">Togo</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad and Tobago</option>
+                            <option value="TN">Tunisia</option>
                             <option value="TR">Turkey</option>
+                            <option value="TM">Turkmenistan</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="UG">Uganda</option>
                             <option value="UA">Ukraine</option>
+                            <option value="AE">United Arab Emirates</option>
                             <option value="GB">United Kingdom</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UZ">Uzbekistan</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VE">Venezuela</option>
                             <option value="VN">Vietnam</option>
+                            <option value="YE">Yemen</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabwe</option>
+
                         </select>
                     </div>
 
                     <div class="flex gap-4">
-                        <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center" onclick="prevSection(2)">
+                        <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center"
+                            onclick="prevSection(2)">
                             <span class="text-xl font-bold">Previous</span>
                         </button>
-                        <button type="button" class="btn-next base-icon-button countdown-button flex-1 justify-center" onclick="nextSection(2)">
+                        <button type="button" class="btn-next base-icon-button countdown-button flex-1 justify-center"
+                            onclick="nextSection(2)">
                             <span class="text-xl font-bold">Next Section</span>
                             <span class="font-icon text-2xl">arrow_forward</span>
                         </button>
@@ -265,7 +450,7 @@
                 <!-- Section 3: Qualifiers -->
                 <div class="form-section" data-section="3">
                     <h3 class="font-mono text-2xl font-bold mb-6 text-center">Qualifiers</h3>
-                    
+
                     <div class="form-group mb-4">
                         <label for="age" class="form-label">Age (You must be 18 or older to participate) *</label>
                         <input type="number" id="age" name="Age" class="form-input" min="18" max="120" required>
@@ -273,37 +458,57 @@
 
                     <div class="form-group mb-4">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="likenessConsent" name="Use Likeness" class="form-checkbox" required>
-                            <span class="text-sm">I agree to allow Hack_NCState to use my likeness (photographs, videos, etc.) for promotional purposes. *</span>
+                            <input type="checkbox" id="likenessConsent" name="Use Likeness" class="form-checkbox flex-shrink-0">
+                            <span class="text-sm">I agree to allow Hack_NCState to use my likeness (photographs, videos,
+                                etc.) for promotional purposes.</span>
                         </label>
                     </div>
 
                     <div class="form-group mb-4">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="mlhDataSharing" name="Disclose Likeness to MLH" class="form-checkbox" required>
-                            <span class="text-sm">I agree to have my information disclosed to Major League Hacking (MLH) for event administration and ranking purposes. *</span>
+                            <input type="checkbox" id="mlhDataSharing" name="Disclose Likeness to MLH"
+                                class="form-checkbox flex-shrink-0">
+                            <span class="text-sm">I agree to have my information disclosed to Major League Hacking (MLH)
+                                for event administration and ranking purposes.</span>
                         </label>
                     </div>
 
                     <div class="form-group mb-4">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="mlhCodeOfConduct" name="Agree to TOS" class="form-checkbox" required>
-                            <span class="text-sm">I have read and agree to the <a href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md" target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Code of Conduct</a>. *</span>
+                            <input type="checkbox" id="mlhCodeOfConduct" name="Agree to TOS" class="form-checkbox flex-shrink-0"
+                                required>
+                            <span class="text-sm">I have read and agree to the <a
+                                    href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
+                                    target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Code of
+                                    Conduct</a>. *</span>
                         </label>
                     </div>
 
-                    <div class="form-group mb-6">
+                    <div class="form-group mb-4">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="mlhTerms" name="Share Consent MLH" class="form-checkbox" required>
-                            <span class="text-sm">I authorize you to share my application/registration information with Major League Hacking for event administration, ranking, and MLH administration in-line with the <a href="https://github.com/MLH/mlh-policies/blob/main/privacy-policy.md" target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Privacy Policy</a>. I further agree to the terms of both the <a href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md" target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Contest Terms and Conditions</a> and the <a href="https://github.com/MLH/mlh-policies/blob/main/privacy-policy.md" target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Privacy Policy</a>. *</span>
+                            <input type="checkbox" id="mlhTerms" name="Share Consent MLH" class="form-checkbox flex-shrink-0"
+                                required>
+                            <span class="text-sm">I authorize you to share my application/registration information with
+                                Major League Hacking for event administration, ranking, and MLH administration in-line
+                                with the <a href="https://github.com/MLH/mlh-policies/blob/main/privacy-policy.md"
+                                    target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Privacy
+                                    Policy</a>. I further agree to the terms of both the <a
+                                    href="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
+                                    target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Contest
+                                    Terms and Conditions</a> and the <a
+                                    href="https://github.com/MLH/mlh-policies/blob/main/privacy-policy.md"
+                                    target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Privacy
+                                    Policy</a>. *</span>
                         </label>
                     </div>
 
                     <div class="flex gap-4">
-                        <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center" onclick="prevSection(3)">
+                        <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center"
+                            onclick="prevSection(3)">
                             <span class="text-xl font-bold">Previous</span>
                         </button>
-                        <button type="button" class="btn-next base-icon-button countdown-button flex-1 justify-center" onclick="nextSection(3)">
+                        <button type="button" class="btn-next base-icon-button countdown-button flex-1 justify-center"
+                            onclick="nextSection(3)">
                             <span class="text-xl font-bold">Next Section</span>
                             <span class="font-icon text-2xl">arrow_forward</span>
                         </button>
@@ -313,7 +518,7 @@
                 <!-- Section 4: Preferences & Additional Info -->
                 <div class="form-section" data-section="4">
                     <h3 class="font-mono text-2xl font-bold mb-6 text-center">Preferences & Additional Information</h3>
-                    
+
                     <div class="form-group mb-4">
                         <label for="tshirtSize" class="form-label">T-Shirt Size *</label>
                         <select id="tshirtSize" name="tshirtSize" class="form-input" required>
@@ -337,7 +542,8 @@
                         <label class="form-label">Dietary Restrictions (Select all that apply)</label>
                         <div class="space-y-2">
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Dietary Restrictions" value="nut-allergy" class="form-checkbox">
+                                <input type="checkbox" name="Dietary Restrictions" value="nut-allergy"
+                                    class="form-checkbox">
                                 <span>Nut Allergy</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
@@ -345,19 +551,23 @@
                                 <span>Halal</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Dietary Restrictions" value="no-beef" class="form-checkbox">
+                                <input type="checkbox" name="Dietary Restrictions" value="no-beef"
+                                    class="form-checkbox">
                                 <span>No Beef</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Dietary Restrictions" value="shellfish-allergy" class="form-checkbox">
+                                <input type="checkbox" name="Dietary Restrictions" value="shellfish-allergy"
+                                    class="form-checkbox">
                                 <span>Shellfish Allergy</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Dietary Restrictions" value="gluten-free" class="form-checkbox">
+                                <input type="checkbox" name="Dietary Restrictions" value="gluten-free"
+                                    class="form-checkbox">
                                 <span>Gluten Free</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" id="dietaryOtherCheck" name="Dietary Restrictions" value="other" class="form-checkbox">
+                                <input type="checkbox" id="dietaryOtherCheck" name="Dietary Restrictions" value="other"
+                                    class="form-checkbox">
                                 <span>Other</span>
                             </label>
                         </div>
@@ -369,33 +579,40 @@
                     </div>
 
                     <div class="form-group mb-4">
-                        <label class="form-label">Which of these reasons for attending do you resonate with most? *</label>
+                        <label class="form-label">Which of these reasons for attending do you resonate with most?
+                            *</label>
                         <div class="space-y-2">
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Reasons for Participating" value="learn-skills" class="form-checkbox">
+                                <input type="checkbox" name="Reasons for Participating" value="learn-skills"
+                                    class="form-checkbox">
                                 <span>Learn new technical skills</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Reasons for Participating" value="network" class="form-checkbox">
+                                <input type="checkbox" name="Reasons for Participating" value="network"
+                                    class="form-checkbox">
                                 <span>Network with other students and professionals</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Reasons for Participating" value="build-project" class="form-checkbox">
+                                <input type="checkbox" name="Reasons for Participating" value="build-project"
+                                    class="form-checkbox">
                                 <span>Build a project for my portfolio</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Reasons for Participating" value="compete" class="form-checkbox">
+                                <input type="checkbox" name="Reasons for Participating" value="compete"
+                                    class="form-checkbox">
                                 <span>Compete and win prizes</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Reasons for Participating" value="fun" class="form-checkbox">
+                                <input type="checkbox" name="Reasons for Participating" value="fun"
+                                    class="form-checkbox">
                                 <span>Have fun with friends</span>
                             </label>
                         </div>
                     </div>
 
                     <div class="form-group mb-4">
-                        <label for="hackathonCount" class="form-label">How many hackathons have you attended (including multiple years of the same hackathon)? *</label>
+                        <label for="hackathonCount" class="form-label">How many hackathons have you attended (including
+                            multiple years of the same hackathon)? *</label>
                         <select id="hackathonCount" name="Num of Previous Hackathons" class="form-input" required>
                             <option value="">Select number...</option>
                             <option value="0">0 - This is my first!</option>
@@ -426,8 +643,11 @@
 
                     <div class="form-group mb-4">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="registrationDisclaimer" name="Check-in Acknowledged" class="form-checkbox" required>
-                            <span class="text-sm">I understand registering does NOT guarantee a spot for attendance. I must confirm my registration in person during the event check-in time OR on February 13. *</span>
+                            <input type="checkbox" id="registrationDisclaimer" name="Check-in Acknowledged"
+                                class="form-checkbox" required>
+                            <span class="text-sm">I understand registering does NOT guarantee a spot for attendance. I
+                                must confirm my registration in person during the event check-in time OR on February 13.
+                                *</span>
                         </label>
                     </div>
 
@@ -440,13 +660,15 @@
 
                     <div class="form-group mb-6">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="excitement" name="Excited for Hack_NCState" class="form-checkbox">
+                            <input type="checkbox" id="excitement" name="Excited for Hack_NCState"
+                                class="form-checkbox">
                             <span class="text-sm">I'm excited for Hack_NCState! 🎉</span>
                         </label>
                     </div>
 
                     <div class="flex gap-4">
-                        <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center" onclick="prevSection(4)">
+                        <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center"
+                            onclick="prevSection(4)">
                             <span class="text-xl font-bold">Previous</span>
                         </button>
                         <button type="submit" class="base-icon-button countdown-button flex-1 justify-center">
