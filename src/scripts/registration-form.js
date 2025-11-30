@@ -80,6 +80,14 @@ function nextSection(current) {
 
     let isValid = true;
     inputs.forEach(input => {
+        // Reset custom validity
+        input.setCustomValidity('');
+
+        // Check for whitespace only
+        if ((input.type === 'text' || input.type === 'email' || input.type === 'tel') && input.value.trim() === '') {
+            input.setCustomValidity('Please fill out this field.');
+        }
+
         if (!input.checkValidity()) {
             isValid = false;
             input.reportValidity();
@@ -160,13 +168,21 @@ document.getElementById('registration-form').addEventListener('submit', function
     let isValid = true;
 
     allInputs.forEach(input => {
+        // Reset custom validity
+        input.setCustomValidity('');
+
+        // Check for whitespace only
+        if ((input.type === 'text' || input.type === 'email' || input.type === 'tel') && input.value.trim() === '') {
+            input.setCustomValidity('Please fill out this field.');
+        }
+
         if (!input.checkValidity()) {
             isValid = false;
+            input.reportValidity();
         }
     });
 
     if (!isValid) {
-        alert('Please fill out all required fields.');
         return;
     }
 
@@ -209,6 +225,11 @@ document.getElementById('registration-form').addEventListener('submit', function
 
     console.log('Form submitted:', new URLSearchParams(data).toString());
 
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalBtnContent = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="text-xl font-bold">Submitting...</span><span class="font-icon text-2xl">check</span>';
+
     fetch("https://script.google.com/macros/s/AKfycbyPO3Wb13yJBp9zRDXt4IvT4J3uGUSFnxU3lWtSYgBvmVKv4G5RCy-VJIc81riE2o5a/exec", {
         method: "POST",
         headers: {
@@ -218,14 +239,20 @@ document.getElementById('registration-form').addEventListener('submit', function
     })
         .then(response => response.json())
         .then(data => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
+
             console.log('Success:', data);
-            if (data.success) {
+            if (data.result === 'success') {
                 alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
             } else {
                 alert(`Registration failed: ${data.message || data.error || 'Please try again.'}`);
             }
         })
         .catch(error => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
+
             console.error('Network or script error:', error);
             alert('There was an error submitting your registration. Please try again later.');
         });

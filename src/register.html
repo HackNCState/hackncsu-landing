@@ -23,32 +23,14 @@
             style="background-image: url('assets/img/decor/bg.webp');">
         </div>
 
-        <div id="binary-stars-container" class="parallax-layer" data-speed="0.25" data-offset="0"></div>
-
-        <div class="parallax-layer" data-speed="0.3" data-offset="900"
-            style="background-image: url('assets/img/decor/b1.webp');">
-        </div>
-
-        <div class="parallax-layer" data-speed="0.5" data-offset="1450"
-            style="background-image: url('assets/img/decor/b2.webp');">
-        </div>
-
-        <div class="parallax-layer" data-speed="0.7" data-offset="1800"
-            style="background-image: url('assets/img/decor/b3.webp');">
-        </div>
-
-        <div class="parallax-layer" data-speed="0.9" data-offset="2500"
-            style="background-image: url('assets/img/decor/b4.webp');">
-        </div>
-
         <!-- Tint layer with vignette -->
         <div class="absolute top-0 left-0 w-full h-screen z-0"
             style="background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.95) 100%);"></div>
     </div>
 
     <!-- Registration Form Container -->
-    <div class="relative z-10 min-h-screen flex items-start justify-center pt-4">
-        <div class="info-container w-full max-w-4xl">
+    <div class="relative z-10 min-h-screen flex items-start justify-center">
+        <div class="w-full max-w-4xl p-6 md:mx-32 lg:mx-64 md:py-8">
 
             <!-- Logo and Title -->
             <div class="flex flex-col items-center text-center mb-8">
@@ -58,7 +40,7 @@
             </div>
 
             <!-- Progress Indicator -->
-            <div class="flex justify-center items-center mb-8 px-4 space-x-20">
+            <div class="flex justify-center items-center mb-8 px-4 space-x-8 md:space-x-20">
                 <div class="flex items-center">
                     <div class="progress-step active" data-step="1">
                         <div class="progress-circle">1</div>
@@ -455,7 +437,8 @@
 
                     <div class="form-group mb-4">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="likenessConsent" name="Use Likeness" class="form-checkbox flex-shrink-0">
+                            <input type="checkbox" id="likenessConsent" name="Use Likeness"
+                                class="form-checkbox flex-shrink-0">
                             <span class="text-sm">I agree to allow Hack_NCState to use my likeness (photographs, videos,
                                 etc.) for promotional purposes.</span>
                         </label>
@@ -472,8 +455,8 @@
 
                     <div class="form-group mb-4">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="mlhCodeOfConduct" name="Agree to TOS" class="form-checkbox flex-shrink-0"
-                                required>
+                            <input type="checkbox" id="mlhCodeOfConduct" name="Agree to TOS"
+                                class="form-checkbox flex-shrink-0" required>
                             <span class="text-sm">I have read and agree to the <a
                                     href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
                                     target="_blank" class="underline text-blue-400 hover:text-blue-300">MLH Code of
@@ -483,8 +466,8 @@
 
                     <div class="form-group mb-4">
                         <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" id="mlhTerms" name="Share Consent MLH" class="form-checkbox flex-shrink-0"
-                                required>
+                            <input type="checkbox" id="mlhTerms" name="Share Consent MLH"
+                                class="form-checkbox flex-shrink-0" required>
                             <span class="text-sm">I authorize you to share my application/registration information with
                                 Major League Hacking for event administration, ranking, and MLH administration in-line
                                 with the <a href="https://github.com/MLH/mlh-policies/blob/main/privacy-policy.md"
@@ -646,7 +629,8 @@
                                 <span>Cisco</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Heard of Sponsors" value="LexisNexis" class="form-checkbox">
+                                <input type="checkbox" name="Heard of Sponsors" value="LexisNexis"
+                                    class="form-checkbox">
                                 <span>LexisNexis</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
@@ -654,7 +638,8 @@
                                 <span>NetApp</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Heard of Sponsors" value="Fidelity Investments" class="form-checkbox">
+                                <input type="checkbox" name="Heard of Sponsors" value="Fidelity Investments"
+                                    class="form-checkbox">
                                 <span>Fidelity Investments</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
@@ -672,27 +657,33 @@
                         <label class="form-label">Which sponsors are you excited to meet?</label>
                         <div class="space-y-2">
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Excited to Meet Sponsors" value="Cisco" class="form-checkbox">
+                                <input type="checkbox" name="Excited to Meet Sponsors" value="Cisco"
+                                    class="form-checkbox">
                                 <span>Cisco</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Excited to Meet Sponsors" value="LexisNexis" class="form-checkbox">
+                                <input type="checkbox" name="Excited to Meet Sponsors" value="LexisNexis"
+                                    class="form-checkbox">
                                 <span>LexisNexis</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Excited to Meet Sponsors" value="NetApp" class="form-checkbox">
+                                <input type="checkbox" name="Excited to Meet Sponsors" value="NetApp"
+                                    class="form-checkbox">
                                 <span>NetApp</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Excited to Meet Sponsors" value="Fidelity Investments" class="form-checkbox">
+                                <input type="checkbox" name="Excited to Meet Sponsors" value="Fidelity Investments"
+                                    class="form-checkbox">
                                 <span>Fidelity Investments</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Excited to Meet Sponsors" value="Lowe's" class="form-checkbox">
+                                <input type="checkbox" name="Excited to Meet Sponsors" value="Lowe's"
+                                    class="form-checkbox">
                                 <span>Lowe's</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="Excited to Meet Sponsors" value="iRODS" class="form-checkbox">
+                                <input type="checkbox" name="Excited to Meet Sponsors" value="iRODS"
+                                    class="form-checkbox">
                                 <span>iRODS</span>
                             </label>
                         </div>

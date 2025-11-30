@@ -43,12 +43,16 @@ a {
     @apply hover:opacity-100 hover:bg-gray-300 hover:shadow-xl/30;
 }
 
+.countdown-button:disabled {
+    @apply opacity-50 cursor-not-allowed hover:bg-white hover:shadow-none;
+}
+
 .outline-button {
-    @apply outline-solid outline-2 outline-gray-100;
+    @apply border-2 border-gray-100;
 }
 
 .dark-outline-button {
-    @apply outline-solid outline-2 outline-black;
+    @apply border-2 border-black;
 }
 
 .list-title {
@@ -119,11 +123,15 @@ a {
     opacity: 0.0;
     will-change: opacity, transform;
 }
-  
-@keyframes spin-smooth {
-    from { transform: rotate(0deg); }
 
-    to { transform: rotate(360deg); }
+@keyframes spin-smooth {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .spinning {
@@ -151,6 +159,7 @@ a {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -166,9 +175,7 @@ a {
 }
 
 .form-input {
-    @apply w-full px-4 py-2 bg-zinc-800 border border-gray-600 rounded-lg text-white 
-           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-           transition-all duration-200;
+    @apply w-full px-4 py-2 bg-zinc-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
 }
 
 .form-input:focus {
@@ -176,10 +183,7 @@ a {
 }
 
 .form-checkbox {
-    @apply appearance-none w-5 h-5 bg-zinc-800 border-gray-600 rounded 
-           focus:ring-2 focus:ring-blue-500 cursor-pointer
-           checked:bg-blue-600 checked:border-blue-600
-           transition-all duration-200;
+    @apply appearance-none w-5 h-5 shrink-0 bg-zinc-800 border-gray-600 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer checked:bg-blue-600 checked:border-blue-600 transition-all duration-200;
 }
 
 /* Progress Indicator Styles */
@@ -188,9 +192,7 @@ a {
 }
 
 .progress-circle {
-    @apply w-10 h-10 rounded-full border-2 border-gray-600 bg-zinc-800 
-           flex items-center justify-center font-mono font-bold text-sm
-           transition-all duration-300;
+    @apply w-10 h-10 rounded-full border-2 border-gray-600 bg-zinc-800 flex items-center justify-center font-mono font-bold text-sm transition-all duration-300;
 }
 
 .progress-step.active .progress-circle {
@@ -202,7 +204,7 @@ a {
 }
 
 .progress-label {
-    @apply text-xs font-mono text-gray-400 text-center hidden md:block;
+    @apply text-xs text-gray-400 text-center hidden md:block;
 }
 
 .progress-step.active .progress-label {
@@ -213,7 +215,7 @@ a {
     @apply text-purple-400;
 }
 
-.progress-step.completed ~ div .progress-line {
+.progress-step.completed~div .progress-line {
     @apply bg-green-500;
 }
 
@@ -222,7 +224,7 @@ a {
     .form-input {
         @apply text-base;
     }
-    
+
     .progress-circle {
         @apply w-8 h-8 text-xs;
     }
