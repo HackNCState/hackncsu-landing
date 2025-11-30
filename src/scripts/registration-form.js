@@ -219,16 +219,19 @@ document.getElementById('registration-form').addEventListener('submit', function
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            if (data.success) {
-                alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
-            } else {
-                alert(`Registration failed: ${data.message || data.error || 'Please try again.'}`);
-            }
-            console.log('Response:', data);
-            window.location.href = './index.html';
+            // if (data.success) {
+            //     alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
+            // } else {
+            //     alert(`Registration failed: ${data.message || data.error || 'Please try again.'}`);
+            // }
         })
         .catch(error => {
             console.error('Network or script error:', error);
             alert('There was an error submitting your registration. Please try again later.');
         });
+
+        alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
+
+            window.location.href = './index.html';
+
 });
