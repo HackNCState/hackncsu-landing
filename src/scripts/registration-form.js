@@ -225,13 +225,10 @@ document.getElementById('registration-form').addEventListener('submit', function
                 alert(`Registration failed: ${data.message || data.error || 'Please try again.'}`);
             }
             console.log('Response:', data);
+            window.location.href = './index.html';
         })
         .catch(error => {
             console.error('Network or script error:', error);
             alert('There was an error submitting your registration. Please try again later.');
         });
-    
-    console.log(response);
-
-    window.location.href = './index.html';
 });
