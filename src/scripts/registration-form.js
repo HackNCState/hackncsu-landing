@@ -209,7 +209,7 @@ document.getElementById('registration-form').addEventListener('submit', function
 
     console.log('Form submitted:', new URLSearchParams(data).toString());
 
-    fetch("https://script.google.com/macros/s/AKfycbw4rDwRn7d5ynAUGAAlCR9KyAZ0Jt9cpDeU5vleGbXqXfwFvUWBdCZ4sMCXrXLzPOO6lA/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbyPO3Wb13yJBp9zRDXt4IvT4J3uGUSFnxU3lWtSYgBvmVKv4G5RCy-VJIc81riE2o5a/exec", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -219,19 +219,14 @@ document.getElementById('registration-form').addEventListener('submit', function
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            // if (data.success) {
-            //     alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
-            // } else {
-            //     alert(`Registration failed: ${data.message || data.error || 'Please try again.'}`);
-            // }
+            if (data.success) {
+                alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
+            } else {
+                alert(`Registration failed: ${data.message || data.error || 'Please try again.'}`);
+            }
         })
         .catch(error => {
             console.error('Network or script error:', error);
             alert('There was an error submitting your registration. Please try again later.');
         });
-
-        alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
-
-            window.location.href = './index.html';
-
 });
