@@ -126,51 +126,80 @@
                     <h3 class="font-mono text-2xl font-bold mb-6 text-center">Demographics</h3>
 
                     <div class="form-group mb-4">
-                        <label class="form-label">School Attending/Attended *</label>
-
-                        <input type="text" id="schoolSearch" class="form-input mb-2"
-                            placeholder="Search for your school...">
-
-                        <select id="schoolSelect" name="University" class="form-input" required>
-                            <option value="">Select your school...</option>
-                        </select>
+                        <label for="schoolInput" class="form-label">School Attending/Attended *</label>
+                        <div class="relative" id="school-dropdown-wrapper">
+                            <input type="text" id="schoolInput" name="University" class="form-input"
+                                placeholder="Search for your school..." autocomplete="off" required>
+                            <div id="schoolOptions"
+                                class="absolute z-50 w-full mt-1 bg-zinc-800 border border-gray-600 rounded-lg shadow-lg max-h-60 overflow-y-auto hidden">
+                                <!-- Options will be populated here -->
+                            </div>
+                        </div>
                     </div>
 
                     <script>
                         document.addEventListener("DOMContentLoaded", () => {
                             let allSchools = [];
-
-                            const select = document.getElementById("schoolSelect");
-                            const searchInput = document.getElementById("schoolSearch");
+                            const wrapper = document.getElementById("school-dropdown-wrapper");
+                            const input = document.getElementById("schoolInput");
+                            const optionsList = document.getElementById("schoolOptions");
 
                             fetch("./assets/lists/schools.json")
                                 .then(res => res.json())
                                 .then(schools => {
                                     allSchools = schools;
-                                    renderSchools(schools);
+                                    // Don't render initially to keep it hidden until interaction
                                 });
 
-                            function renderSchools(list) {
-                                // Clear existing options (except the placeholder)
-                                select.innerHTML = '<option value="">Select your school...</option>';
+                            function renderOptions(list) {
+                                optionsList.innerHTML = '';
+                                if (list.length === 0) {
+                                    const noResult = document.createElement("div");
+                                    noResult.className = "px-4 py-2 text-gray-400 italic text-sm";
+                                    noResult.textContent = "No schools found";
+                                    optionsList.appendChild(noResult);
+                                    return;
+                                }
 
                                 list.forEach(name => {
-                                    const opt = document.createElement("option");
-                                    opt.value = name;
-                                    opt.textContent = name;
-                                    select.appendChild(opt);
+                                    const div = document.createElement("div");
+                                    div.className = "px-4 py-2 hover:bg-zinc-700 cursor-pointer transition-colors duration-150 text-sm";
+                                    div.textContent = name;
+                                    div.addEventListener("click", () => {
+                                        input.value = name;
+                                        optionsList.classList.add("hidden");
+                                        input.dispatchEvent(new Event('change'));
+                                        input.setCustomValidity(''); // Clear any validation error
+                                    });
+                                    optionsList.appendChild(div);
                                 });
                             }
 
-                            searchInput.addEventListener("input", () => {
-                                const query = searchInput.value.toLowerCase();
+                            // Show options on focus
+                            input.addEventListener("focus", () => {
+                                const query = input.value.toLowerCase();
+                                const filtered = allSchools.filter(s => s.toLowerCase().includes(query));
+                                renderOptions(filtered);
+                                optionsList.classList.remove("hidden");
+                            });
+
+                            // Filter on input
+                            input.addEventListener("input", () => {
+                                const query = input.value.toLowerCase();
                                 const filtered = allSchools.filter(s =>
                                     s.toLowerCase().includes(query)
                                 );
-                                renderSchools(filtered);
+                                renderOptions(filtered);
+                                optionsList.classList.remove("hidden");
+                            });
+
+                            // Hide when clicking outside
+                            document.addEventListener("click", (e) => {
+                                if (!wrapper.contains(e.target)) {
+                                    optionsList.classList.add("hidden");
+                                }
                             });
                         });
-
                     </script>
 
                     <div class="form-group mb-4">
