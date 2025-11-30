@@ -213,10 +213,6 @@ a {
     @apply text-purple-400;
 }
 
-.progress-line {
-    @apply h-0.5 bg-gray-600 flex-1;
-}
-
 .progress-step.completed ~ div .progress-line {
     @apply bg-green-500;
 }
