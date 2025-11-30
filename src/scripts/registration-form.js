@@ -174,7 +174,7 @@ document.getElementById('registration-form').addEventListener('submit', function
     const formData = new FormData(this);
     const data = {};
 
-    listKeys = [ 'Dietary Restrictions', 'Excited to Meet Sponsors', 'Heard of Sponsors', 'Attend Reasons'];
+    listKeys = [ 'Dietary Restrictions', 'Excited to Meet Sponsors', 'Heard of Sponsors', 'Reasons for Participating'];
 
     otherKeys = ['dietaryOtherText', 'genderOtherText', 'levelOfStudyOtherText', 'tshirtOtherText', 'hearAboutUsOtherText'];
     
@@ -197,9 +197,9 @@ document.getElementById('registration-form').addEventListener('submit', function
             } else if (key === 'levelOfStudyOtherText' && value.trim() !== '') {
                 data['Level of Study'] = value;
             } else if (key === 'tshirtOtherText' && value.trim() !== '') {
-                data['T-Shirt Size'] = value;
+                data['Shirt Size'] = value;
             } else if (key === 'hearAboutUsOtherText' && value.trim() !== '') {
-                data['Hear About Us'] = value;
+                data['Heard of Hack_NCState Via'] = value;
             }
         } else {
             data[key] = value;
