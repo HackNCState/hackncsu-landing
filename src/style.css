@@ -192,31 +192,27 @@ a {
 }
 
 .progress-circle {
-    @apply w-10 h-10 rounded-full border-2 border-gray-600 bg-zinc-800 flex items-center justify-center font-mono font-bold text-sm transition-all duration-300;
+    @apply w-10 h-10 rounded-full border-2 border-zinc-700 bg-zinc-800/50 text-zinc-500 flex items-center justify-center font-mono font-bold text-sm transition-all duration-300;
 }
 
 .progress-step.active .progress-circle {
-    @apply border-blue-500 bg-blue-600 text-white scale-110;
+    @apply border-blue-400 bg-blue-500/20 text-blue-100 scale-110 shadow-lg shadow-blue-500/20;
 }
 
 .progress-step.completed .progress-circle {
-    @apply border-purple-500 bg-purple-600 text-white;
+    @apply border-purple-500 bg-purple-500/30 text-purple-100;
 }
 
 .progress-label {
-    @apply text-xs text-gray-400 text-center hidden md:block;
+    @apply text-xs text-zinc-600 text-center hidden md:block;
 }
 
 .progress-step.active .progress-label {
-    @apply text-blue-400 font-bold;
+    @apply text-blue-300;
 }
 
 .progress-step.completed .progress-label {
-    @apply text-purple-400;
-}
-
-.progress-step.completed~div .progress-line {
-    @apply bg-green-500;
+    @apply text-purple-300;
 }
 
 /* Mobile Responsiveness for Form */

@@ -34,8 +34,7 @@
 
             <!-- Logo and Title -->
             <div class="flex flex-col items-center text-center mb-8">
-                <img src="./assets/img/logo.png" alt="Hack_NCState Logo" class="w-32 mb-4">
-                <h1 class="font-logo text-4xl md:text-5xl mb-2">Hack_NCState 2026</h1>
+                <h1 class="font-logo text-4xl md:text-4xl mb-2">Hack_NCState 2026</h1>
                 <h2 class="font-mono text-xl md:text-2xl">Registration Form</h2>
             </div>
 
@@ -116,7 +115,8 @@
 
                     <button type="button" class="btn-next base-icon-button countdown-button w-full justify-center"
                         onclick="nextSection(1)">
-                        <span class="text-xl font-bold">Next Section</span>
+                        <span class="text-xl font-bold md:hidden">Next</span>
+                        <span class="text-xl font-bold hidden md:inline">Next Section</span>
                         <span class="font-icon text-2xl">arrow_forward</span>
                     </button>
                 </div>
@@ -445,11 +445,13 @@
                     <div class="flex gap-4">
                         <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center"
                             onclick="prevSection(2)">
-                            <span class="text-xl font-bold">Previous</span>
+                            <span class="text-xl font-bold md:hidden">Prev</span>
+                            <span class="text-xl font-bold hidden md:inline">Previous</span>
                         </button>
                         <button type="button" class="btn-next base-icon-button countdown-button flex-1 justify-center"
                             onclick="nextSection(2)">
-                            <span class="text-xl font-bold">Next Section</span>
+                            <span class="text-xl font-bold md:hidden">Next</span>
+                            <span class="text-xl font-bold hidden md:inline">Next Section</span>
                             <span class="font-icon text-2xl">arrow_forward</span>
                         </button>
                     </div>
@@ -514,11 +516,13 @@
                     <div class="flex gap-4">
                         <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center"
                             onclick="prevSection(3)">
-                            <span class="text-xl font-bold">Previous</span>
+                            <span class="text-xl font-bold md:hidden">Prev</span>
+                            <span class="text-xl font-bold hidden md:inline">Previous</span>
                         </button>
                         <button type="button" class="btn-next base-icon-button countdown-button flex-1 justify-center"
                             onclick="nextSection(3)">
-                            <span class="text-xl font-bold">Next Section</span>
+                            <span class="text-xl font-bold md:hidden">Next</span>
+                            <span class="text-xl font-bold hidden md:inline">Next Section</span>
                             <span class="font-icon text-2xl">arrow_forward</span>
                         </button>
                     </div>
@@ -747,7 +751,8 @@
                     <div class="flex gap-4">
                         <button type="button" class="btn-prev base-icon-button outline-button flex-1 justify-center"
                             onclick="prevSection(4)">
-                            <span class="text-xl font-bold">Previous</span>
+                            <span class="text-xl font-bold md:hidden">Prev</span>
+                            <span class="text-xl font-bold hidden md:inline">Previous</span>
                         </button>
                         <button type="submit" class="base-icon-button countdown-button flex-1 justify-center">
                             <span class="text-xl font-bold">Submit Registration</span>
