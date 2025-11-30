@@ -34,9 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const otherField = document.getElementById('dietaryOther');
         if (this.checked) {
             otherField.style.display = 'block';
+            document.getElementById('dietaryOtherText').required = true;
         } else {
             otherField.style.display = 'none';
             document.getElementById('dietaryOtherText').value = '';
+            document.getElementById('dietaryOtherText').required = false;
         }
     });
 
