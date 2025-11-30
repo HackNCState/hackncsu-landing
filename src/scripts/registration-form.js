@@ -218,6 +218,7 @@ document.getElementById('registration-form').addEventListener('submit', function
     })
         .then(response => response.json())
         .then(data => {
+            console.log('Success:', data);
             if (data.success) {
                 alert('Thank you for registering for Hack_NCState 2026! We will contact you with more information soon. Email us at hackncstate@ncsu.edu if you need to update your registration.');
             } else {
