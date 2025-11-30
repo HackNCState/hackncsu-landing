@@ -173,15 +173,34 @@ document.getElementById('registration-form').addEventListener('submit', function
     // Collect form data
     const formData = new FormData(this);
     const data = {};
+
+    listKeys = [ 'Dietary Restrictions', 'Excited to Meet Sponsors', 'Heard of Sponsors', 'Attend Reasons'];
+
+    otherKeys = ['dietaryOtherText', 'genderOtherText', 'levelOfStudyOtherText', 'tshirtOtherText', 'hearAboutUsOtherText'];
     
     // Handle regular inputs
     for (let [key, value] of formData.entries()) {
-        if (key === 'dietary' || key === 'attendReason') {
+        if (listKeys.includes(key)) {
             // Handle multiple checkboxes
             if (!data[key]) {
                 data[key] = [];
             }
             data[key].push(value);
+        } else if (otherKeys.includes(key)) {
+            if (key === 'dietaryOtherText' && value.trim() !== '') {
+                if (!data['Dietary Restrictions']) {
+                    data['Dietary Restrictions'] = [];
+                }
+                data['Dietary Restrictions'].push(value);
+            } else if (key === 'genderOtherText' && value.trim() !== '') {
+                data['Gender'] = value;
+            } else if (key === 'levelOfStudyOtherText' && value.trim() !== '') {
+                data['Level of Study'] = value;
+            } else if (key === 'tshirtOtherText' && value.trim() !== '') {
+                data['T-Shirt Size'] = value;
+            } else if (key === 'hearAboutUsOtherText' && value.trim() !== '') {
+                data['Hear About Us'] = value;
+            }
         } else {
             data[key] = value;
         }
