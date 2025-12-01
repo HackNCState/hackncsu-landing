@@ -1,8 +1,8 @@
 // i ai generated this i have no shame
 
 const heroGradientElement = document.getElementById('hero-gradient'); // Renamed for clarity
-const gradientColorFrom = 'var(--color-red-600)'; // Tailwind's blue-600
-const gradientColorTo = 'var(--color-red-900)';
+const gradientColorFrom = 'var(--color-gray-700)'; 
+const gradientColorTo = 'var(--color-black)';     
 let animatedGradientAngle = 0;
 
 function animateHeroGradientAngle() {

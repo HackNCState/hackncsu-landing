@@ -15,13 +15,13 @@
     <script src="scripts/constants.js"></script>
 </head>
 
-<body>
+<body class="bg-zinc-950 text-gray-200">
     <a id="mlh-trust-badge" style="display:block;
           max-width:100px;
           min-width:60px;
           position:fixed;
           right:50px;
-          top:0;
+          top:0;    
           width:10%;
           z-index:10000"
         href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=black"
@@ -29,17 +29,55 @@
         <img src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-black.svg"
             alt="Major League Hacking 2026 Hackathon Season" style="width:100%"></a>
 
-    <div id="hero" class="relative h-dvh overflow-hidden">
-        <!-- gradient -->
-        <div id="hero-gradient" class="absolute inset-0 z-0 bg-linear-to-tr from-red-600 to-red-900"></div>
 
-        <script src="scripts/hero-gradient-animation.js"></script>
+    <script src="scripts/music-player.js"></script>
 
-        <!-- TODO: fix these ones zeroes -->
-        <span id="hero-binary-bg"
-            class="absolute z-1 text-6xl break-all font-mono font-extrabold tracking-[35px] leading-tight inset-0 text-center -m-12 opacity-30 mix-blend-soft-light">010100000110000101100011011010110100100001100001011000110110101101110011</span>
+    <a title="Play Hack_NCState Theme" id="noir-music-player" href="#" onclick="playMusic()"
+        style="position:absolute; top:10px; left:10px; z-index:10000; background-color:#1f2937; color:#ffffff; border-radius:100%; font-weight:bold; display:flex; align-items:center; justify-content:center; width:45px; height:45px; filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.342));">
+        <div style="position:relative; width:40px; height:40px; flex-shrink:0;">
+            <img id="cd-image" src="assets/img/cd.jpg" alt="Play Music"
+                style="width:100%; height:100%; border-radius:100%;">
+            <div id="light"
+                style="position:absolute; bottom:1px; right:1px; width:8px; height:8px; background-color:#1f2937; border-radius:50%; box-shadow:0 0 3px #1f2937;">
+            </div>
+        </div>
+        <audio id="music" src="assets/audio/jazz-noir-detective-music.mp3" loop></audio>
+    </a>
 
-        <script src="scripts/hero-binary-bg-animation.js"></script>
+    <script src="scripts/parallax.js"></script>
+
+    <!-- parallax bg container -->
+    <div id="parallax-container">
+        <div class="parallax-layer" data-speed="0.2" data-offset="0"
+            style="background-image: url('assets/img/decor/bg.webp');">
+        </div>
+
+        <div id="binary-stars-container" class="parallax-layer" data-speed="0.25" data-offset="0"></div>
+
+        <div class="parallax-layer" data-speed="0.3" data-offset="900"
+            style="background-image: url('assets/img/decor/b1.webp');">
+        </div>
+
+        <div class="parallax-layer" data-speed="0.5" data-offset="1450"
+            style="background-image: url('assets/img/decor/b2.webp');">
+        </div>
+
+        <div class="parallax-layer" data-speed="0.7" data-offset="1800"
+            style="background-image: url('assets/img/decor/b3.webp');">
+        </div>
+
+        <div class="parallax-layer" data-speed="0.9" data-offset="2500"
+            style="background-image: url('assets/img/decor/b4.webp');">
+        </div>
+
+        <!-- Tint layer with vignette -->
+        <div class="absolute top-0 left-0 w-full h-screen z-0"
+            style="background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.95) 100%);"></div>
+    </div>
+
+
+    <div id="hero" class="relative h-dvh overflow-hidden z-10">
+
 
         <!-- hero content -->
         <div class="absolute inset-0 z-2 info-container !p-6 !md-0 flex flex-col justify-between text-white">
@@ -47,8 +85,8 @@
             <div class="grow flex flex-col justify-evenly text-center md:items-center">
                 <div class="flex flex-col justify-center items-center text-center">
                     <img src="./assets/img/logo.png" alt="Hack_NCState Logo" class="w-2/5 mb-4 md:w-52">
-                    <img src="./assets/img/name.png" alt="Hack_NCState Name" class="w-3/4 md:w-96">
-                    <div class="w-3/4 flex flex-row justify-between items-center text-2xl font-mono md:w-96">
+                    <h1 class="font-logo text-5xl">Hack_NCState</h1>
+                    <div class="w-3/4 flex flex-row justify-between items-center text-2xl font-mono mt-1 md:w-80">
                         <span>2</span>
                         <span>0</span>
                         <span>2</span>
@@ -58,7 +96,7 @@
                 </div>
                 <h1 class="sr-only">Hack_NCState 2026</h1>
 
-                <div>
+                <div class="font-mono">
                     <h2 class="text-2xl font-bold">Feb 14th and 15th</h2>
                     <h3 id="registration-flavor" class="text-xl">Registration is now open!</h3>
                 </div>
@@ -84,7 +122,7 @@
                         </div>
                     </div>
 
-                    <a id="hero-button" href="https://example.com" class="base-icon-button countdown-button">
+                    <a id="hero-button" href="./register.html" class="base-icon-button countdown-button">
                         <span class="text-2xl font-bold">Register Free</span>
                         <span class="font-icon text-3xl">arrow_forward</span>
                     </a>
@@ -104,64 +142,67 @@
     </div>
 
     <script src="scripts/hero-resizer.js"></script>
+    <script src="scripts/binary-stars.js"></script>
 
-    <div id="exposition" class="info-container">
+    <div id="exposition" class="info-container relative z-10">
         <!-- Exposition -->
-        <h2 class="text-lg md:text-3xl">Hack_NCState is North Carolina State University's premier hackathon.</h2>
+        <h2 class="text-lg md:text-3xl font-mono">Hack_NCState is North Carolina State University's premier hackathon.
+        </h2>
     </div>
 
 
     <div id="description"
-        class="relative bg-[url(assets/img/hack1.jpg)] bg-bottom-right bg-no-repeat bg-cover text-white md:bg-center md:mx-32 md:rounded-4xl md:overflow-hidden md:shadow-2xl md:shadow-black">
+        class="relative bg-[url(assets/img/hack1.jpg)] bg-bottom-right bg-no-repeat bg-cover text-white md:bg-center md:mx-32 lg:mx-64 md:rounded-4xl md:overflow-hidden md:shadow-2xl md:shadow-black md:outline-2 md:outline-dashed md:outline-white">
 
         <!-- gradient layer -->
         <div class="absolute inset-0 z-0 img-bg-gradient"></div>
 
         <!-- content layer -->
-        <div class="relative z-10 flex flex-col gap-4 info-container md:text-lg md:gap-8">
-            <h2 class="info-container-header">An opportunity to connect, compete, and collaborate.
+        <div class="relative z-10 flex flex-col gap-4 info-container md:!mx-12 md:text-lg md:gap-8">
+            <h2 class="info-container-header">A 24-hour race to crack the case.
             </h2>
-            <p>Hackathons are 24-hour competitions where students collaborate to solve problems using technology.
-                Whether you're technical or not, you’ll form teams, build innovative projects from scratch—like
-                websites, apps, or hardware—and bring ideas to life. Grab some friends and start creating!</p>
-            <p>Hack_NCState is <span class="font-bold">100% free</span> for everyone to attend! Enjoy complimentary
-                catering, a free t-shirt, stickers, and fun activities during the event.</p>
+            <p>This isn't your ordinary gig. It's a 24-hour competition where you collaborate to solve problems using
+                technology.
+                Whether you're a seasoned investigator or a new recruit, you’ll form squads, build your project from
+                scratch - like
+                websites, apps, or hardware, and bring your solution to light. Grab your crew and start hacking!</p>
+            <p>Hack_NCState is <span class="font-bold">100% free</span> for all to attend! Enjoy complimentary
+                food, a standard-issue t-shirt, stickers, and other activities while you're on the case.</p>
             <a href="https://hackncstate2025.devpost.com/project-gallery"
                 class="base-icon-button outline-button mt-16 md:w-fit">
-                <span class="text-xl font-bold md:mr-4">View Past Projects</span>
+                <span class="text-xl font-bold md:mr-4">Review Past Projects</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
         </div>
     </div>
 
-    <div id="faq" class="info-container flex flex-col gap-4 md:gap-8">
+    <div id="faq" class="info-container flex flex-col gap-4 md:gap-10">
         <div class="list-entry">
             <div class="list-title">
                 <span class="font-icon">calendar_month</span>
-                <h2 class="font-mono font-bold">When's the event?</h2>
+                <h2 class="font-mono font-bold">When's the operation?</h2>
             </div>
-
-            <p>Hack_NCState 2026 will be held through the weekend February 14th and 15th. You begin coding at 11 AM on
-                Saturday and have until 11 AM on Sunday to submit your project.</p>
+            <p>Hack_NCState 2026 will run through the weekend of February 14th and 15th. You begin coding at 11 AM on
+                Saturday and have until 11 AM on Sunday to submit your project .</p>
         </div>
 
         <div class="list-entry">
             <div class="list-title">
                 <span class="font-icon">location_on</span>
-                <h2 class="font-mono font-bold">Where's the event?</h2>
+                <h2 class="font-mono font-bold">Where's the rendezvous?</h2>
             </div>
 
-            <p>Hack_NCState is held in Duke Energy Hall in James B. Hunt Jr. Library, which is on North Carolina State
-                University’s Centennial Campus.</p>
+            <p>Hack_NCState is be held in Talley Student Union in the heart of North Carolina State University’s Main
+                Campus.</p>
+
         </div>
 
         <div class="list-entry">
             <div class="list-title">
                 <span class="font-icon">person</span>
-                <h2 class="font-mono font-bold">Who can participate?</h2>
+                <h2 class="font-mono font-bold">Who's on the case?</h2>
             </div>
-
-            <p>Hack_NCState is open to all university students, and you don't need to be an NC State student to
+            <p>Hack_NCState is open to all university students. You don't need to be an NC State student to
                 participate!</p>
         </div>
 
@@ -172,7 +213,8 @@
 
             <div>
                 <h3 class="font-bold">How does the competition work?</h3>
-                <p>Teams of 2-4 students will work together to code or build a project and present it to the judges.
+                <p class="ml-8 mt-1">Teams of 2-4 students will work together to code or build a project and present it
+                    to the judges.
                     This project can be or
                     do anything; there are no constraints on what teams are allowed to develop, as long as the project
                     fits the team’s
@@ -183,7 +225,8 @@
 
             <div>
                 <h3 class="font-bold">What if I don't have a team?</h3>
-                <p>No worries! We will have a session early in the day where you can connect with other participants who
+                <p class="ml-8 mt-1">No worries! We will have a session early in the day where you can connect with
+                    other participants who
                     are looking to
                     fill out or form a team. This is an excellent opportunity to expand your already existing team or
                     connect with others
@@ -193,7 +236,8 @@
 
             <div>
                 <h3 class="font-bold">What is a track?</h3>
-                <p>A track is designed to help focus your ideas into one specific subject area. You can think of it like
+                <p class="ml-8 mt-1">A track is designed to help focus your ideas into one specific subject area. You
+                    can think of it like
                     a category. Some
                     examples of tracks include social impact, financial technology, or data science.
                 </p>
@@ -201,7 +245,8 @@
 
             <div>
                 <h3 class="font-bold">Is it free?</h3>
-                <p>Yes! Hack_NCState is 100% free. What’s more, as a participant you’ll receive a free t-shirt,
+                <p class="ml-8 mt-1">Yes! Hack_NCState is 100% free. What’s more, as a participant you’ll receive a free
+                    t-shirt,
                     stickers, food, alongside
                     the opportunity to participate in fun workshops and activities. However this does mean we are unable
                     to provide any kind
@@ -211,11 +256,11 @@
 
             <div>
                 <h3 class="font-bold">What's the schedule?</h3>
-                <p>The event schedule and other detailed information will be sent out to registered participants as we
+                <p class="ml-8 mt-1">The event schedule and other detailed information will be sent out to registered
+                    participants as we
                     get closer to the
-                    event. If you’re registered, you can view all essential resources on <a
-                        href="https://today.hackncstate.org" class="underline">today.hackncstate.org</a> as
-                    they’re released.
+                    event. During the event, you'll be able to view all essential resources on <a
+                        href="https://today.hackncstate.org" class="underline">today.hackncstate.org</a>.
                 </p>
             </div>
         </div>
@@ -223,55 +268,59 @@
     </div>
 
     <div id="contact"
-        class="relative bg-[url(assets/img/hack2.jpg)] bg-center bg-no-repeat bg-cover text-white md:mx-32 md:rounded-4xl md:overflow-hidden md:shadow-2xl md:shadow-black">
+        class="relative bg-[url(assets/img/hack2.jpg)] bg-center bg-no-repeat bg-cover text-white md:mx-32 lg:mx-64 md:rounded-4xl md:overflow-hidden md:shadow-2xl md:shadow-black md:outline-2 md:outline-dashed md:outline-white">
         <!-- gradient layer -->
         <div class="absolute inset-0 z-0 img-bg-gradient"></div>
 
         <!-- content layer -->
-        <div class="relative z-10 flex flex-col gap-4 info-container md:text-lg">
+        <div class="relative z-10 flex flex-col gap-4 info-container md:!mx-12 md:text-lg">
             <h2 class="text-2xl font-mono font-bold md:text-4xl">Connect with us!</h2>
+
             <p>People like you make Hack_NCState happen. If you want to be the first to hear from us on any new updates,
                 consider
                 joining our newsletter!</p>
+
             <p>If you have any unanswered questions, don’t hesitate to reach out to us at <a
                     href="mailto:hackncstate@ncsu.edu" class="font-bold underline">hackncstate@ncsu.edu.</a></p>
+
             <a href="http://eepurl.com/iCj-vE" class="base-icon-button outline-button mt-16 md:w-fit">
-                <span class="text-xl font-bold md:mr-4">Join Newsletter</span>
+                <span class="text-xl font-bold md:mr-4">Join our Newsletter</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
         </div>
     </div>
 
     <div id="sponsors-container" class="info-container flex flex-col gap-4 md:text-lg">
-        <h2 class="text-2xl text-red-700 font-mono font-bold md:text-4xl">Sponsors</h2>
+        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Sponsors</h2>
+
         <p>We are grateful to our sponsors for their support in making Hack_NCState possible. If you are interested
             in
             sponsoring Hack_NCState, please reach out to us at <a href="mailto:hackncstate@ncsu.edu"
                 class="font-bold underline">hackncstate@ncsu.edu</a>.</p>
 
-        <div id="sponsors-list"
-            class="my-8 flex flex-row flex-wrap justify-center items-center gap-y-12 gap-x-4 md:gap-x-16">
-            <a class="mx-4 md:mx-6 w-50 lg:w-75" href="https://www.lexisnexis.com/"><img
-                    src="assets/img/sponsors/lexisnexis.png" alt="LexisNexis"></a>
-            <a class="mx-4 md:mx-6 w-50 lg:w-75" href="https://www.netapp.com/"><img
-                    src="assets/img/sponsors/netapp.avif" alt="NetApp"></a>
-            <a class="mx-4 md:mx-6 w-50 lg:w-75" href="https://www.fidelity.com/"><img
-                    src="assets/img/sponsors/fidelity.webp" alt="Fidelity"></a>
-            <a class="mx-4 md:mx-6 w-40 lg:w-65" href="https://www.lowes.com/"><img src="assets/img/sponsors/lowes.png"
-                    alt="Lowe's"></a>
-            <!-- Lowe's logo is slightly smaller to look better to the eye -->
-            <a class="mx-4 md:mx-6 w-40 lg:w-65" href="https://www.cisco.com/"><img src="assets/img/sponsors/cisco.png"
+        <div id="sponsors-list" class="my-8 flex flex-row flex-wrap justify-center items-center gap-8 md:gap-16">
+            <a href="https://www.cisco.com/"><img class="h-16 md:h-24 w-auto" src="assets/img/sponsors/cisco-white.png"
                     alt="Cisco"></a>
+            <a href="https://www.lexisnexis.com/"><img class="h-10 md:h-14 w-auto"
+                    src="assets/img/sponsors/lexisnexis-white.png" alt="LexisNexis"></a>
+            <a href="https://www.netapp.com/"><img class="h-10 md:h-14 w-auto"
+                    src="assets/img/sponsors/netapp-white.png" alt="NetApp"></a>
+            <a href="https://www.fidelity.com/"><img class="h-10 md:h-14 w-auto"
+                    src="assets/img/sponsors/fidelity-white.png" alt="Fidelity"></a>
+            <a href="https://www.lowes.com/"><img class="h-14 md:h-20 w-auto" src="assets/img/sponsors/lowes-white.png"
+                    alt="Lowe's"></a>
+            <a href="https://irods.org/"><img class="h-8 md:h-12 w-auto" src="assets/img/sponsors/irods-white.png"
+                    alt="iRODS"></a>
         </div>
 
     </div>
 
     <div id="organizers-container" class="info-container flex flex-col gap-4 -mt-8 md:gap-8 md:-mt-48 md:text-lg">
-        <h2 class="text-2xl text-red-700 font-mono font-bold md:text-4xl">Meet the Team</h2>
+        <h2 class="text-2xl text-gray-100 font-mono font-bold md:text-4xl">Meet the Team</h2>
 
 
         <div>
-            <h3 class="text-xl text-red-600 font-mono font-semibold mb-4 md:text-3xl">Directors</h3>
+            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Directors</h3>
             <div id="directors-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.linkedin.com/in/pranavrajagopal/" target="_blank" class="organizer">
                     <img src="assets/img/organizers/pranav.jpg" alt="Pranav Rajagopal" class="organizer-photo">
@@ -317,7 +366,7 @@
         </div>
 
         <div>
-            <h3 class="text-xl text-red-600 font-mono font-semibold mb-4 md:text-3xl">Organizers</h3>
+            <h3 class="text-xl text-gray-100 font-mono font-semibold mb-4 md:text-3xl">Organizers</h3>
             <div id="organizers-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a href="https://www.linkedin.com/in/aaryarajoju/" target="_blank" class="organizer">
                     <img src="assets/img/organizers/aarya.jpg" alt="Aarya Rajoju" class="organizer-photo">
@@ -400,7 +449,7 @@
             <p>Are you a passionate NC State student? <span class="font-bold">Join the planning
                     committee!</span></p>
             <a href="https://getinvolved.ncsu.edu/organization/hackncstate"
-                class="base-icon-button dark-outline-button self-start md:w-fit">
+                class="base-icon-button outline-button self-start md:w-fit">
                 <span class="text-xl font-bold mr-5">Get Involved</span>
                 <span class="font-icon text-3xl">arrow_forward</span>
             </a>
@@ -410,10 +459,9 @@
 
 
     <div id="footer" class="relative">
-        <div class="absolute inset-0 z-0 bg-linear-to-tr from-red-600 to-red-900"></div>
-
+        <div class="absolute inset-0 z-0 bg-linear-to-t from-black to-transparent"></div>
         <div class="relative z-1 inset-0 info-container flex flex-col gap-4 text-white !p-6 !md-0">
-            <h2 class="text-2xl font-mono font-bold">Hack_NCState</h2>
+            <h2 class="text-2xl font-logo font-bold">Hack_NCState</h2>
             <div class="flex flex-col">
                 <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" class="font-bold underline">MLH
                     Code of
@@ -427,6 +475,28 @@
 
         <img class="absolute z-2 h-2/3 bottom-0 right-4 opacity-50" src="./assets/img/logo.png" alt="Hack_NCState Logo">
     </div>
+
+    <!-- Foreground Vignette -->
+    <div class="hidden md:block fixed inset-0 z-50 pointer-events-none"
+        style="background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 100%);"></div>
+
+    <script>
+        console.log(`
+███╗   ██╗ ██████╗
+████╗  ██║██╔════╝
+██╔██╗ ██║██║
+██║╚██╗██║██║
+██║ ╚████║╚██████╗
+╚═╝  ╚═══╝ ╚═════╝
+
+ ██████╗ ████████╗ █████╗ ████████╗███████╗
+██╔════╝ ╚══██╔══╝██╔══██╗╚══██╔══╝██╔════╝
+███████╗    ██║   ███████║   ██║   ███████╗
+╚════██║    ██║   ██╔══██║   ██║   ██╔════╝
+███████║    ██║   ██║  ██║   ██║   ███████║
+    `);
+    </script>
+
 </body>
 
 </html>
