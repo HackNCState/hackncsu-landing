@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols:FILL,ROND@0..1,100&icon_names=arrow_cool_down,arrow_forward,calendar_month,link,location_on,person&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols:FILL,ROND@0..1,100&icon_names=arrow_cool_down,arrow_forward,calendar_month,check,link,location_on,person&display=block');
 /** TODO: only include needed icons and other optimizations
 https://developers.google.com/fonts/docs/material_symbols#optimize_the_icon_font
 */
@@ -43,12 +43,16 @@ a {
     @apply hover:opacity-100 hover:bg-gray-300 hover:shadow-xl/30;
 }
 
+.countdown-button:disabled {
+    @apply opacity-50 cursor-not-allowed hover:bg-white hover:shadow-none;
+}
+
 .outline-button {
-    @apply outline-solid outline-2 outline-gray-100;
+    @apply border-2 border-gray-100;
 }
 
 .dark-outline-button {
-    @apply outline-solid outline-2 outline-black;
+    @apply border-2 border-black;
 }
 
 .list-title {
@@ -119,11 +123,15 @@ a {
     opacity: 0.0;
     will-change: opacity, transform;
 }
-  
-@keyframes spin-smooth {
-    from { transform: rotate(0deg); }
 
-    to { transform: rotate(360deg); }
+@keyframes spin-smooth {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .spinning {
@@ -134,4 +142,105 @@ a {
     transition:
         background-color 0.4s ease,
         box-shadow 0.4s ease;
+}
+
+/* Registration Form Styles */
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    @apply flex flex-col;
+}
+
+.form-label {
+    @apply text-sm font-semibold mb-2 text-gray-200;
+}
+
+.form-input {
+    @apply w-full px-4 py-2 bg-zinc-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+}
+
+.form-input:focus {
+    @apply bg-zinc-700;
+}
+
+select.form-input {
+    @apply appearance-none pr-10;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='m19 9-7 7-7-7'/%3e%3c/svg%3e");
+    background-position: right 1rem center;
+    background-repeat: no-repeat;
+    background-size: 1em 1em;
+}
+
+/* hide the annoying (and very ugly) spin buttons for number inputs */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.form-checkbox {
+    @apply appearance-none w-5 h-5 shrink-0 bg-zinc-800 border-gray-600 rounded focus:ring-2 focus:ring-blue-500 cursor-pointer checked:bg-blue-600 checked:border-blue-600 transition-all duration-200;
+}
+
+/* Progress Indicator Styles */
+.progress-step {
+    @apply flex flex-col items-center gap-2 relative;
+}
+
+.progress-circle {
+    @apply w-10 h-10 rounded-full border-2 border-zinc-700 bg-zinc-800/50 text-zinc-500 flex items-center justify-center font-mono font-bold text-sm transition-all duration-300;
+}
+
+.progress-step.active .progress-circle {
+    @apply border-blue-400 bg-blue-500/20 text-blue-100 scale-110 shadow-lg shadow-blue-500/20;
+}
+
+.progress-step.completed .progress-circle {
+    @apply border-purple-500 bg-purple-500/30 text-purple-100;
+}
+
+.progress-label {
+    @apply text-xs text-zinc-600 text-center hidden md:block;
+}
+
+.progress-step.active .progress-label {
+    @apply text-blue-300;
+}
+
+.progress-step.completed .progress-label {
+    @apply text-purple-300;
+}
+
+/* Mobile Responsiveness for Form */
+@media (max-width: 640px) {
+    .form-input {
+        @apply text-base;
+    }
+
+    .progress-circle {
+        @apply w-8 h-8 text-xs;
+    }
 }
