@@ -64,7 +64,7 @@ a {
 }
 
 .organizer {
-    @apply flex flex-row items-center gap-4 p-4 border border-gray-600 rounded-2xl hover:shadow-lg;
+    @apply flex flex-row items-center gap-4 p-4 border-2 border-dashed border-white/20 rounded-2xl hover:shadow-lg;
 
     .organizer-photo {
         @apply w-16 h-16 rounded-full object-cover md:w-20 md:h-20;
