@@ -15,7 +15,7 @@ npm install tailwindcss @tailwindcss/cli
 
 Then run tailwindcss in watch mode (so it rebuilds on changes)
 ```bash
-npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+npx tailwindcss -i ./src/style.css -o ./src/output.css --watch
 ```
 
 Now when you change any HTML or CSS files, the output.css file will be updated automatically with the new styles. Don't forget to link the output.css file in your HTML files if you create new ones.
