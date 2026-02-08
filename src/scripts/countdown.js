@@ -13,7 +13,7 @@ function declareUnknownRegistration() {
 }
 
 function declareRegistrationClosed() {
-    document.getElementById("registration-flavor").innerText = "Registration is now closed.\nSee you at the hackathon!";
+    document.getElementById("registration-flavor").innerText = "We have reached our maximum capacity for this year's event, and registration is now closed.\nSee you at the hackathon!";
     document.getElementById("countdown-flavor").innerText = "";
 
     const button = document.getElementById("hero-button");
