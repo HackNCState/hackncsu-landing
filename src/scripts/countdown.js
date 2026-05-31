@@ -7,7 +7,7 @@ function declareUnknownRegistration() {
 
     const button = document.getElementById("hero-button");
     button.children[0].innerText = "Interest Form";
-    button.href = "https://docs.google.com/forms/d/e/1FAIpQLSez6g9QzUq1tzpaSi9LrTFv8y-Nh5fdbNsjmIJ4-5-RFDTUPg/viewform?usp=dialog";
+    button.href = "https://docs.google.com/forms/d/e/1FAIpQLSf8uiQci4I5DA0fEttLIqscER9JedFEt4zSF-BZr4HXY6QPKQ/viewform?usp=header";
 
 
 }
